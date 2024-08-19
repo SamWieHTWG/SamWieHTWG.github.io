@@ -139,9 +139,9 @@
         const fov = camera.fov * (Math.PI / 180);
         const cameraZ = Math.abs(maxDim / 4 * Math.tan(fov * 2)); // Geringerer Abstand für eine engere Ansicht
 
-        var fact = 1.5
-        camera.position.x = center.x + maxX * fact;
-        camera.position.y = center.y -5;
+        var fact = 2
+        camera.position.x = center.x - maxX * fact;
+        camera.position.y = center.y;
         camera.position.z = center.z;
 
 
@@ -348,6 +348,7 @@
 
             render();
 
+
         }
 
         function disposeMaterial(obj) {
@@ -417,6 +418,37 @@
             return { r, theta, phi };
         }
 
+        function calculateRotation(center, point, dt) {
+            // Destructure the center and point coordinates
+            var x_m = center.x;
+            var y_m = center.y;
+            var z_m = center.z;
+            var x = point[0];
+            var y = point[1];
+            var z = point[2];
+
+            // Translate point to the origin based on the center
+            const x_prime = x - x_m;
+            const y_prime = y - y_m;
+            const z_prime = z - z_m;
+            
+            // Example Quaternion
+            const quaternion = new THREE.Quaternion();
+            quaternion.setFromAxisAngle(new THREE.Vector3(0, 1, 0), 0.1*dt); // Rotate around Y-axis by 45 degrees
+
+               // Create a Vector3 from the coordinates
+            let vector = new THREE.Vector3(x_prime, y_prime, z_prime);
+
+            // Apply the quaternion to the vector
+            vector.applyQuaternion(quaternion);
+
+            vector.x = center.x + vector.x
+            vector.y = center.y + vector.y
+            vector.z = center.z + vector.z
+            return vector
+        }
+
+
         function sphericalToCartesian(r, theta, phi) {
             // Stelle sicher, dass Theta und Phi in Radiant sind
             const x = r * Math.sin(theta) * Math.cos(phi);
@@ -425,6 +457,22 @@
 
             return { x, y, z };
         }
+
+        function quaternionToCartesian(r, quaternion) {
+            // Unit vector along the z-axis (as if theta = 0 and phi = 0)
+            const unitVector = new THREE.Vector3(0, 0, 1);
+
+            // Apply the quaternion rotation to the unit vector
+            unitVector.applyQuaternion(quaternion);
+
+            // Scale the vector by radius r
+            const x = unitVector.x * r;
+            const y = unitVector.y * r;
+            const z = unitVector.z * r;
+
+            return { x, y, z };
+        }
+
 
         function calculate3DDistance(p1, p2) {
             let x1 = p1.x;
@@ -448,21 +496,26 @@
 
             const time = Date.now() * 0.001;  // Zeit in Sekunden
             var dt = time - time_last;
+            if(Math.abs(dt)>1)
+                dt = 0;
             time_last = time;
 
-
-
+                    
             var pos = [camera.position.x, camera.position.y, camera.position.z]
-            var polar = calculateSphericalCoordinates(center, pos)
+            var polar = calculateSphericalCoordinates(center, pos);
+            var vector = calculateRotation(center, pos, dt);
 
-            polar.theta = polar.theta + dt * 0.05;
+            polar.phi = polar.phi + dt * 0.5;
+
+            console.log(polar.theta)
             // polar.phi = polar.phi + dt * 0.02;
             // console.log(polar.theta)
-            var vals = sphericalToCartesian(polar.r, polar.theta, polar.phi)
+            // var vals = sphericalToCartesian(polar.r, polar.theta, polar.phi)
+            // var vals = quaternionToCartesian(polar.r,q)
             // Kamerabewegung aktualisieren
-            camera.position.x = vals.x
-            camera.position.y = vals.y
-            camera.position.z = vals.z
+            camera.position.x = vector.x
+            camera.position.y = vector.y
+            camera.position.z = vector.z
 
             // Die Kamera sollte auf das Zentrum der Szene ausgerichtet sein
             camera.lookAt(center);
@@ -566,6 +619,7 @@
         }
 
         setupScene();
+
         animate();  // Starten der Animation
 
         var timeoutId;
