@@ -112,8 +112,8 @@
       );
 
       // OrbitControls initialisieren
-      const controls = new OrbitControls(camera, renderer.domElement);
-      controls.target.set(0, 0, 0); // Zielpunkt der Kamera
+    //   const controls = new OrbitControls(camera, renderer.domElement);
+    //   controls.target.set(0, 0, 0); // Zielpunkt der Kamera
 
       // Berechnen des Zentrums und der Größe der Szene
       const box = new THREE.Box3().setFromObject(scene);
@@ -638,7 +638,7 @@
         if (timeoutId !== null) {
           clearTimeout(timeoutId);
         }
-        mouseIsMoving = true;
+        // mouseIsMoving = true;
 
         mousePosX = event.clientX;
         mousePosY = event.clientY;
