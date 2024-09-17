@@ -129,7 +129,7 @@
       const fov = camera.fov * (Math.PI / 180);
       const cameraZ = Math.abs((maxDim / 4) * Math.tan(fov * 2)); // Geringerer Abstand für eine engere Ansicht
 
-      var fact = 1.5;
+      var fact = 1.1;
       camera.position.x = center.x - maxX * fact;
       camera.position.y = center.y;
       camera.position.z = center.z;
@@ -346,7 +346,7 @@
         // Erstellen des Materials für die Partikel
         const particleMaterial = new THREE.PointsMaterial({
           color: "black",
-          size: 0.3,
+          size: 0.5,
           // blending: THREE.AdditiveBlending,
           depthTest: false,
           transparent: true,
