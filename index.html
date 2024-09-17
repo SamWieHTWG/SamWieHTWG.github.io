@@ -137,7 +137,7 @@
       // Die Kamera sollte auf das Zentrum der Szene ausgerichtet sein
       camera.lookAt(center);
 
-      scene.background = new THREE.Color(0xffffff); // Sets the background to white
+      scene.background = new THREE.Color(0xf5f5f5); // Sets the background to white
 
       const renderScene = new RenderPass(scene, camera);
       const composer = new EffectComposer(renderer);
@@ -256,9 +256,6 @@
             depth: 0.001,
             curveSegments: 12,
             font: font,
-            // size: 0.7,
-            // depth: 0.001,
-            // curveSegments: 3,
           });
           // const textMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 });
           const textMesh = new THREE.Mesh(textGeometry, material);
@@ -641,7 +638,7 @@
         if (timeoutId !== null) {
           clearTimeout(timeoutId);
         }
-        // mouseIsMoving = true;
+        mouseIsMoving = true;
 
         mousePosX = event.clientX;
         mousePosY = event.clientY;
