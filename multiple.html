@@ -9,6 +9,7 @@
     <title>three.js webgl - postprocessing - unreal bloom selective</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- <link type="text/css" rel="stylesheet" href="main.css"> -->
     <style>
         body {
             margin: 0;
@@ -58,6 +59,15 @@
 			}
 
 		</script>
+
+    <!-- <script type="importmap">
+			{
+				"imports": {
+					"three": "../static/js/three_module/build/three.module.js",
+					"three/addons/": "../static/js/three_module/jsm/"
+				}
+			}
+       </script> -->
        <script type="importmap">
         {
             "imports": {
@@ -82,6 +92,7 @@
         import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
         import { FontLoader } from 'three/addons/loaders/FontLoader.js';
         import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
+        // import { STLLoader } from 'three/addons/loaders/STLLoader.js'
 
         const BLOOM_SCENE = 1;
 
@@ -95,19 +106,25 @@
             exposure: 1
         };
 
-        const darkMaterial = new THREE.MeshBasicMaterial({ color: 'black' });
+        const darkMaterial = new THREE.MeshBasicMaterial({ color: 'yellow' });
         const materials = {};
 
         const renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setPixelRatio(window.devicePixelRatio);
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.toneMapping = THREE.ReinhardToneMapping;
+        // const renderer = new THREE.WebGLRenderer({ alpha: true }); // Enable transparency
+        // renderer.setClearColor(0xffffff, 1); // Set clear color to black with 0 opacity
 
 
         document.body.appendChild(renderer.domElement);
 
         const scene = new THREE.Scene();
+
+        // scene.background = null;
         const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 200);
+        // camera.position.set(0, 0, 20);
+        // camera.lookAt(0, 0, 0);
 
         // OrbitControls initialisieren
         const controls = new OrbitControls(camera, renderer.domElement);
@@ -132,17 +149,47 @@
         camera.position.y = center.y;
         camera.position.z = center.z;
 
+
         // Die Kamera sollte auf das Zentrum der Szene ausgerichtet sein
         camera.lookAt(center);
 
-        scene.background = new THREE.Color(0xffffff); // Sets the background to white
 
         const renderScene = new RenderPass(scene, camera);
-        const composer = new EffectComposer(renderer);
-        composer.addPass(renderScene);
+
+        const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.5, 0.4, 0.85);
+        bloomPass.threshold = params.threshold;
+        bloomPass.strength = params.strength;
+        bloomPass.radius = params.radius;
+
+        const bloomComposer = new EffectComposer(renderer);
+        bloomComposer.renderToScreen = false;
+        bloomComposer.addPass(renderScene);
+        bloomComposer.addPass(bloomPass);
+
+        const mixPass = new ShaderPass(
+            new THREE.ShaderMaterial({
+                uniforms: {
+                    baseTexture: { value: null },
+                    bloomTexture: { value: bloomComposer.renderTarget2.texture }
+                },
+                vertexShader: document.getElementById('vertexshader').textContent,
+                fragmentShader: document.getElementById('fragmentshader').textContent,
+                defines: {}
+            }), 'baseTexture'
+        );
+        mixPass.needsSwap = true;
+
+        const outputPass = new OutputPass();
+
+        const finalComposer = new EffectComposer(renderer);
+        finalComposer.addPass(renderScene);
+        finalComposer.addPass(mixPass);
+        finalComposer.addPass(outputPass);
 
         const raycaster = new THREE.Raycaster();
+
         const mouse = new THREE.Vector2();
+
         window.addEventListener('pointerdown', onPointerDown);
 
         function onPointerDown(event) {
@@ -198,10 +245,13 @@
             scene.traverse(disposeMaterial);
             scene.children.length = 0;
 
-            const material = new THREE.LineBasicMaterial({ color: "black" });
+            const material = new THREE.LineBasicMaterial({ color: "blue" });
 
             const geometry = new THREE.BoxGeometry(5, 5, 5); // Width, Height, Depth
             const edges = new THREE.EdgesGeometry(geometry); // Get edges from the geometry
+            // const wireframe = new THREE.LineSegments(edges, material); // Create line segments from edges
+            // scene.add(wireframe); // Add wireframe to scene
+            // scene.background = new THREE.Color('white');
 
             // Extract vertices
             const vertices = edges.attributes.position.array;
@@ -255,7 +305,7 @@
                         pointA.x === pointB.x && pointA.z === pointB.z) {  // Parallel to Y
                         // Create a geometry for each axis-aligned segment
                         const lineGeometry = new THREE.BufferGeometry().setFromPoints([pointA, pointB]);
-                        const material = new THREE.LineBasicMaterial({ color: "black" }); // White line
+                        const material = new THREE.LineBasicMaterial({ color: "red" }); // White line
                         const line = new THREE.Line(lineGeometry, material);
                         scene.add(line);
                          linePoints.push([pointA, pointB]);
@@ -274,7 +324,7 @@
                 particleSetIdx[i] = setIndex;
                 var index = Math.floor(t * (linePoints[setIndex].length - 1));
                 particleIdx[i] = index;
-                particleSpeed[i] = Math.random() * 0.25+0.15;
+                particleSpeed[i] = Math.random() * 0.3;
 
                 let pointStart = linePoints[setIndex][index];
                 let x = pointStart.x
@@ -290,7 +340,7 @@
 
             // Erstellen des Materials für die Partikel
             const particleMaterial = new THREE.PointsMaterial({
-                color: "black",
+                color: "green",
                 size: 0.3,
                 // blending: THREE.AdditiveBlending,
                 depthTest: false,
@@ -319,12 +369,12 @@
 
         function render() {
 
-            composer.render();
-            // scene.traverse(darkenNonBloomed);
-            // scene.traverse(restoreMaterial);
+            scene.traverse(darkenNonBloomed);
+            bloomComposer.render();
+            scene.traverse(restoreMaterial);
 
             // render the entire scene, then render bloom scene on top
-            // finalComposer.render();
+            finalComposer.render();
 
         }
 
@@ -463,12 +513,6 @@
 
             polar.phi = polar.phi + dt * 0.5;
 
-            // console.log(polar.theta)
-            // polar.phi = polar.phi + dt * 0.02;
-            // console.log(polar.theta)
-            // var vals = sphericalToCartesian(polar.r, polar.theta, polar.phi)
-            // var vals = quaternionToCartesian(polar.r,q)
-            // Kamerabewegung aktualisieren
             camera.position.x = vector.x
             camera.position.y = vector.y
             camera.position.z = vector.z
@@ -479,7 +523,6 @@
 
             // Partikel entlang der Linie animieren
             let partPos = particles.geometry.attributes.position.array;
-
 
             for (let i = 0; i < particleCount; i++) {
                 let t = (Date.now() % 10000) / 100000;
@@ -579,27 +622,6 @@
         animate();  // Starten der Animation
 
         var timeoutId;
-
-        function handleMouseMove(event) {
-            // Setze den Timer zurück, wenn sich die Maus bewegt
-            if (timeoutId !== null) {
-                clearTimeout(timeoutId);
-            }
-            mouseIsMoving = true;
-
-            mousePosX = event.clientX;
-            mousePosY = event.clientY;
-            // Starte den Timer neu
-            timeoutId = setTimeout(() => {
-                // console.log('Mausbewegung gestoppt');
-                mouseIsMoving = false;
-            }, 100);  // Verzögerung von 1000 Millisekunden (1 Sekunde)
-
-            // console.log("Mausposition - X:", event.clientX, "Y:", event.clientY);
-        }
-
-        // Füge den Event-Listener zum window-Objekt hinzu
-        window.addEventListener('mousemove', handleMouseMove);
 
 
     </script>
