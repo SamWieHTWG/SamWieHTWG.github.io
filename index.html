@@ -188,6 +188,11 @@
       var particleStartPos = [];
       var particleEndPos = [];
 
+        var particleMeshs = [];
+
+        var partPos = [];
+
+
       var linePoints = [];
 
       function createOrder(L) {
@@ -233,7 +238,7 @@
         const material = new THREE.LineBasicMaterial({ color: "black" });
 
         const geometry = new THREE.BoxGeometry(5, 5, 5); // Width, Height, Depth
-        const edges = new THREE.EdgesGeometry(geometry); // Get edges from the geometry
+        var edges = new THREE.EdgesGeometry(geometry); // Get edges from the geometry
 
         // Extract vertices
         const vertices = edges.attributes.position.array;
@@ -308,7 +313,7 @@
 
         linePoints = createOrder(5);
         for (var idx = 0; idx < linePoints.length; idx++) {
-          console.log(linePoints[idx][0], linePoints[idx][1]);
+        //   console.log(linePoints[idx][0], linePoints[idx][1]);
           if (idx > 0) {
             if (linePoints[idx][0] != linePoints[idx - 1][1]) {
               var stop = 1;
@@ -318,7 +323,13 @@
 
         // Erstellen der Partikel-Geometrie
         const particlePositions = new Float32Array(particleCount * 3);
-        const particleGeometry = new THREE.BufferGeometry();
+        // const particleGeometry = new THREE.BufferGeometry();
+        const particleSize = 0.15
+        const particleGeometry = new THREE.BoxGeometry(particleSize,particleSize,particleSize); // Size of each cube
+        const particleMaterial = new THREE.MeshBasicMaterial({ color: 0x000000 }); 
+        const edgeMaterial = new THREE.LineBasicMaterial({ color: 0x000000 }); // Color of edges
+        edges = new THREE.EdgesGeometry(particleGeometry);
+
 
         for (let i = 0; i < particleCount; i++) {
           // Partikel initial zufällig entlang der Linie verteilen
@@ -336,25 +347,26 @@
           particlePositions[i * 3] = x;
           particlePositions[i * 3 + 1] = y;
           particlePositions[i * 3 + 2] = z;
+        //   const particleMesh = new THREE.Mesh(particleGeometry, particleMaterial);
+          const particleMesh = new THREE.LineSegments(edges, edgeMaterial);
+          particleMesh.position.x = x;
+          particleMesh.position.y = y;
+          particleMesh.position.z = z;
+          scene.add(particleMesh);
+          particleMeshs.push(particleMesh)
         }
 
-        particleGeometry.setAttribute(
-          "position",
-          new THREE.BufferAttribute(particlePositions, 3)
-        );
-
-        // Erstellen des Materials für die Partikel
-        const particleMaterial = new THREE.PointsMaterial({
-          color: "black",
-          size: 0.5,
-          // blending: THREE.AdditiveBlending,
-          depthTest: false,
-          transparent: true,
-        });
+        // // Erstellen des Materials für die Partikel
+        // const particleMaterial = new THREE.PointsMaterial({
+        //   color: "black",
+        // //   size: 0.5,
+        //   // blending: THREE.AdditiveBlending,
+        //   depthTest: false,
+        //   transparent: true,
+        // });
 
         // Erstellen der Partikel-Points und zur Szene hinzufügen
-        particles = new THREE.Points(particleGeometry, particleMaterial);
-        scene.add(particles);
+        // particles = new THREE.Points(particleGeometry, particleMaterial);
 
         render();
       }
@@ -511,9 +523,14 @@
         camera.lookAt(center);
 
         // Partikel entlang der Linie animieren
-        let partPos = particles.geometry.attributes.position.array;
+        // let partPos = particles.geometry.attributes.position.array;
 
         for (let i = 0; i < particleCount; i++) {
+
+          partPos[i*3] = particleMeshs[i].position.x;
+          partPos[i*3 + 1] = particleMeshs[i].position.y;
+          partPos[i*3 + 2] = particleMeshs[i].position.z;
+
           let t = (Date.now() % 10000) / 100000;
           var pos = {
             x: partPos[i * 3],
@@ -584,8 +601,11 @@
           partPos[i * 3 + 1] = pos.y + dirY * interp;
           partPos[i * 3 + 2] = pos.z + dirZ * interp;
           // console.log(positions)
+
+          particleMeshs[i].position.x =  partPos[i*3 + 0];
+          particleMeshs[i].position.y =  partPos[i*3 + 1];
+          particleMeshs[i].position.z =  partPos[i*3 + 2];
         }
-        particles.geometry.attributes.position.needsUpdate = true;
 
         requestAnimationFrame(animate);
 
