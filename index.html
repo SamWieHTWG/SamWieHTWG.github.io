@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <!-- Bootstrap 4 CSS -->
     <link
@@ -15,6 +16,10 @@
       content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
     <style>
+      html {
+    cursor: move; /* Changes the cursor to a hand pointer on the entire website */
+}
+
       body {
         margin: 0;
       }
@@ -112,8 +117,8 @@
       );
 
       // OrbitControls initialisieren
-    //   const controls = new OrbitControls(camera, renderer.domElement);
-    //   controls.target.set(0, 0, 0); // Zielpunkt der Kamera
+      const controls = new OrbitControls(camera, renderer.domElement);
+       controls.target.set(0, 0, 0); // Zielpunkt der Kamera
 
       // Berechnen des Zentrums und der Größe der Szene
       const box = new THREE.Box3().setFromObject(scene);
