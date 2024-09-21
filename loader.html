@@ -76,15 +76,15 @@
     <script type="module">
       import * as THREE from "three";
 
-      import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-      import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
-      import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
-      import { ShaderPass } from "three/addons/postprocessing/ShaderPass.js";
+      import { OrbitControls   } from "three/addons/controls/OrbitControls.js";
+      import { EffectComposer  } from "three/addons/postprocessing/EffectComposer.js";
+      import { RenderPass      } from "three/addons/postprocessing/RenderPass.js";
+      import { ShaderPass      } from "three/addons/postprocessing/ShaderPass.js";
       import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
-      import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
-      import { FontLoader } from "three/addons/loaders/FontLoader.js";
-      import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
-      import { TextGeometry } from "three/addons/geometries/TextGeometry.js";
+      import { OutputPass      } from "three/addons/postprocessing/OutputPass.js";
+      import { FontLoader      } from "three/addons/loaders/FontLoader.js";
+      import { OBJLoader       } from "three/addons/loaders/OBJLoader.js";
+      import { TextGeometry    } from "three/addons/geometries/TextGeometry.js";
 
       // Setup the scene
       const scene = new THREE.Scene();
@@ -99,7 +99,7 @@
       document.body.appendChild(renderer.domElement);
 
       // Set the background to grey
-      scene.background = new THREE.Color(0x808080);
+      scene.background = new THREE.Color(0xf5f5f5);
 
       // Create a light
       const light = new THREE.AmbientLight(0xffffff); // soft white light
@@ -138,8 +138,10 @@
       controls.update();
 
       // Position the camera
-      camera.position.z = 5;
 
+        camera.position.x = 0.5;
+        camera.position.y = 0.5;
+        camera.position.z = 0.5;
       // Animation loop
       function animate() {
         requestAnimationFrame(animate);
