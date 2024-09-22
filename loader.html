@@ -110,7 +110,7 @@
 
       // Load a .obj file
       loader.load(
-        "models/model1.obj", // Path to the .obj file
+        "models/model6.obj", // Path to the .obj file
         function (object) {
           const edgeGeometry = new THREE.EdgesGeometry(
             object.children[0].geometry
@@ -139,9 +139,9 @@
 
       // Position the camera
 
-        camera.position.x = 0.5;
-        camera.position.y = 0.5;
-        camera.position.z = 0.5;
+        camera.position.x = 100;
+        camera.position.y = 100;
+        camera.position.z = 100;
       // Animation loop
       function animate() {
         requestAnimationFrame(animate);
