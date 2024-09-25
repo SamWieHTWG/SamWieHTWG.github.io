@@ -114,7 +114,7 @@
       const loader = new OBJLoader();
 
       // Load a .obj file
-           loader.load(
+      await    loader.load(
         "models/project1.obj", // Path to the .obj file
         function (object) {
           for(var idx=0; idx<object.children.length; idx++)
@@ -153,6 +153,38 @@
       camera.position.y = 3.6524715195081896;
       camera.position.z = 17;
 
+      
+      // Berechnen des Zentrums und der Größe der Szene
+      function getSceneCenter(scene) {
+        let boundingBox = new THREE.Box3();
+
+        // Traverse all children in the scene
+        scene.traverse(function (object) {
+            if (object.isMesh) {
+                object.geometry.computeBoundingBox(); // Ensure the geometry's bounding box is calculated
+                let box = object.geometry.boundingBox.clone();
+                box.applyMatrix4(object.matrixWorld); // Apply the object's world matrix to the box
+                boundingBox.union(box); // Merge with the main bounding box
+            }
+        });
+
+        let center = new THREE.Vector3();
+        boundingBox.getCenter(center); // Get the center of the bounding box
+        return center;
+    }
+      var center = getSceneCenter(scene);
+      // const box = new THREE.Box3().setFromObject(scene);
+      // let cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
+      // let cubeMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+      //   let cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+      //   cube.position.set(5, 1, 5);
+      // scene.add(cube);
+      center.x = 5;
+      center.y = 1;
+      center.z = 5;
+      // var center = box.getCenter(new THREE.Vector3());
+
+
       // Camera Position - x: , y: , z: 16.981153919381356
       // Animation loop
       function animate() {
@@ -160,10 +192,94 @@
         requestAnimationFrame(animate);
         // controls.update(); // only required if controls.enableDamping or controls.autoRotate are set to true
         
-
+        cameraRotation();
         renderer.render(scene, camera);
         // console.log(`Camera Position - x: ${camera.position.x}, y: ${camera.position.y}, z: ${camera.position.z}`);
 
+      }
+
+      var time_last = 0;
+
+
+         function calculateSphericalCoordinates(center, point) {
+        // Destructure the center and point coordinates
+        var x_m = center.x;
+        var y_m = center.y;
+        var z_m = center.z;
+        var x = point[0];
+        var y = point[1];
+        var z = point[2];
+
+        // Translate point to the origin based on the center
+        const x_prime = x - x_m;
+        const y_prime = y - y_m;
+        const z_prime = z - z_m;
+
+        // Calculate the spherical coordinates
+        const r = Math.sqrt(
+          x_prime * x_prime + y_prime * y_prime + z_prime * z_prime
+        );
+        var theta = Math.acos(z_prime / r);
+        var phi = Math.atan2(y_prime, x_prime);
+
+        // Return the spherical coordinates
+        return { r, theta, phi };
+      }
+       function calculateRotation(center, point, dt) {
+        // Destructure the center and point coordinates
+        var x_m = center.x;
+        var y_m = center.y;
+        var z_m = center.z;
+        var x = point[0];
+        var y = point[1];
+        var z = point[2];
+
+        // Translate point to the origin based on the center
+        const x_prime = x - x_m;
+        const y_prime = y - y_m;
+        const z_prime = z - z_m;
+
+        // Example Quaternion
+        const quaternion = new THREE.Quaternion();
+        quaternion.setFromAxisAngle(new THREE.Vector3(0, 1, 0), 0.1 * dt); // Rotate around Y-axis by 45 degrees
+
+        // Create a Vector3 from the coordinates
+        let vector = new THREE.Vector3(x_prime, y_prime, z_prime);
+
+        // Apply the quaternion to the vector
+        vector.applyQuaternion(quaternion);
+
+        vector.x = center.x + vector.x;
+        vector.y = center.y + vector.y;
+        vector.z = center.z + vector.z;
+        return vector;
+      }
+
+      function cameraRotation()
+      {
+          const time = Date.now() * 0.001; // Zeit in Sekunden
+        var dt = time - time_last;
+        if (Math.abs(dt) > 1) dt = 0;
+        time_last = time;
+
+        var pos = [camera.position.x, camera.position.y, camera.position.z];
+        var polar = calculateSphericalCoordinates(center, pos);
+        var vector = calculateRotation(center, pos, dt);
+
+        polar.phi = polar.phi + dt * 0.5;
+
+        // console.log(polar.theta)
+        // polar.phi = polar.phi + dt * 0.02;
+        // console.log(polar.theta)
+        // var vals = sphericalToCartesian(polar.r, polar.theta, polar.phi)
+        // var vals = quaternionToCartesian(polar.r,q)
+        // Kamerabewegung aktualisieren
+        camera.position.x = vector.x;
+        camera.position.y = vector.y;
+        camera.position.z = vector.z;
+
+        // Die Kamera sollte auf das Zentrum eder Szene ausgerichtet sein
+        camera.lookAt(center);
       }
 
       animate();
