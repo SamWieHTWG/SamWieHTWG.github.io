@@ -138,7 +138,19 @@
 
       controls.noZoom = true;
 
-
+      window.addEventListener('mousewheel', function(e) {
+        e.preventDefault();
+        var x = ( event.clientX / window.innerWidth ) * 2 - 1,
+            y = - ( event.clientY / window.innerHeight ) * 2 + 1,
+            vector = new THREE.Vector3(x, y, 1),
+            factor = 0.01,
+            func = e.deltaY < 0 ? 'addVectors' : 'subVectors';
+        vector.unproject(camera);
+        vector.sub(camera.position);
+        camera.position[func](camera.position,vector.setLength(factor));
+        controls.target[func](controls.target,vector.setLength(factor));
+        camera.updateProjectionMatrix();
+      })
 
       controls.update();
 
