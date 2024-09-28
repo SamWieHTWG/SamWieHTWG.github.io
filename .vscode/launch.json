@@ -24,6 +24,13 @@
             "name": "Open project.html",
           "url": "http://localhost:5500/project.html",
           "webRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Open meas.html",
+          "url": "http://localhost:5500/meas.html",
+          "webRoot": "${workspaceFolder}"
         }
     ]
 }
