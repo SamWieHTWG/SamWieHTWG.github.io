@@ -81,11 +81,34 @@
 
       let scene, camera, renderer, circle, arrow;
       let arrowLength = 100,
-        speed = 0.05;
+        speed = 0.08;
 
-      var lineStart = -arrowLength / 2;
-      var lineEnd = arrowLength / 2;
+      var lineStart1 = -arrowLength / 2;
+      var lineEnd1 = arrowLength / 2;
 
+      var lineStart2 = arrowLength / 2 + arrowLength / 5;
+      var lineEnd2 = lineStart2 + arrowLength;
+
+      var line1Mid = (lineStart1 + lineEnd1) / 2;
+      var line2Mid = (lineStart2 + lineEnd2) / 2;
+
+      var lines = [];
+      lines.push({ start: lineStart1, end: lineEnd1 });
+      lines.push({ start: lineStart2, end: lineEnd2 });
+
+      var texts = [];
+      // Adding each text entry
+      addText("Inkraft", 8, 2024);
+      addText("Veroeffentlichung", 11, 2024);
+      addText("Harmon", 4, 2025);
+      addText("Verpflicht", 9, 2025);
+      addText("System", 5, 2026);
+      addText("Schritt", 6, 2027);
+      addText("Imple", 7, 2027);
+      addText("DPPVerpf", 4, 2028);
+      addText("Ökoricht", 10, 2028);
+
+      var years = ["2025", "2026", "2027", "2028", "2029"];
 
       var MARKERSIZE = 0.002 * 100;
       var MARKERLENGTH = 0.1 * 100;
@@ -94,11 +117,10 @@
       var YEARHEIGHT = 5;
       var YEARWIDTH = 10;
       var size = 5;
-      var TEXTHEIGTH = 35 *  0.43 *0.8;
-      var TEXTWIDTH = 45   * 0.3  *0.8;
+      var TEXTHEIGTH = 35 * 0.43 * 0.8;
+      var TEXTWIDTH = 45 * 0.3 * 0.8;
 
       scene = new THREE.Scene();
-
 
       renderer = new THREE.WebGLRenderer();
       renderer.setSize(window.innerWidth, window.innerHeight);
@@ -111,280 +133,104 @@
       // circle = new THREE.Mesh(circleGeometry, circleMaterial);
       // circle.position.x = lineStart;
       // scene.add(circle);
+      var lineStart;
+      var lineEnd;
+      for (var lineIdx = 0; lineIdx < lines.length; lineIdx = lineIdx + 1) {
+        lineStart = lines[lineIdx].start;
+        lineEnd = lines[lineIdx].end;
+        // Create a black line
+        {
+          const points = [];
+          points.push(new THREE.Vector3(lineStart, 0, 0));
+          points.push(new THREE.Vector3(lineEnd, 0, 0));
+          const lineGeometry = new THREE.BufferGeometry().setFromPoints(points);
+          const lineMaterial = new THREE.LineBasicMaterial({ color: 0x000000 });
+          var line = new THREE.Line(lineGeometry, lineMaterial);
+          scene.add(line);
+        }
 
-      // Create a black line
-      const points = [];
-      points.push(new THREE.Vector3(lineStart, 0, 0));
-      points.push(new THREE.Vector3(lineEnd, 0, 0));
-      const lineGeometry = new THREE.BufferGeometry().setFromPoints(points);
-      const lineMaterial = new THREE.LineBasicMaterial({ color: 0x000000 });
-      var line = new THREE.Line(lineGeometry, lineMaterial);
-      scene.add(line);
+        // Add a vertical marker at the beginning of the timeline
+        const markerMaterial = new THREE.MeshBasicMaterial({ color: 0x000000 });
 
-      // Add a vertical marker at the beginning of the timeline
-      const markerMaterial = new THREE.MeshBasicMaterial({ color: 0x000000 });
-      
-      {
-      const markerGeometry = new THREE.BoxGeometry(MARKERSIZEYEAR, MARKERLENGTHYEAR, 0); // Thin vertical line
-      const marker = new THREE.Mesh(markerGeometry, markerMaterial);
-      var markerPos = calcPosFromDate(1, 2025);
-      marker.position.set(markerPos, 0, 0);
-      scene.add(marker);
-            addSVGtoScene(
-        "svgs/2025.svg",
-        YEARWIDTH,
-        YEARHEIGHT,
-        markerPos,
-        MARKERLENGTHYEAR/2 + YEARHEIGHT / 2,
-        0
-      );
-      }
-      {
-      const markerGeometry = new THREE.BoxGeometry(MARKERSIZEYEAR, MARKERLENGTHYEAR, 0); // Thin vertical line
-      const marker = new THREE.Mesh(markerGeometry, markerMaterial);
-      var markerPos = calcPosFromDate(1, 2027);
-      marker.position.set(markerPos, 0, 0);
-      scene.add(marker);
-            addSVGtoScene(
-        "svgs/2027.svg",
-        YEARWIDTH,
-        YEARHEIGHT,
-        markerPos,
-        MARKERLENGTHYEAR/2 + YEARHEIGHT / 2,
-        0
-      );
-      }
-      {
-      const markerGeometry = new THREE.BoxGeometry(MARKERSIZEYEAR, MARKERLENGTHYEAR, 0); // Thin vertical line
-      const marker = new THREE.Mesh(markerGeometry, markerMaterial);
-      var markerPos = calcPosFromDate(1, 2028);
-      marker.position.set(markerPos, 0, 0);
-      scene.add(marker);
-            addSVGtoScene(
-        "svgs/2028.svg",
-        YEARWIDTH,
-        YEARHEIGHT,
-        markerPos,
-        MARKERLENGTHYEAR/2 + YEARHEIGHT / 2,
-        0
-      );
-      }
-      {
-      const markerGeometry = new THREE.BoxGeometry(MARKERSIZEYEAR, MARKERLENGTHYEAR, 0); // Thin vertical line
-      const marker = new THREE.Mesh(markerGeometry, markerMaterial);
-      var markerPos = calcPosFromDate(1, 2029);
-      marker.position.set(markerPos, 0, 0);
-      scene.add(marker);
-            addSVGtoScene(
-        "svgs/2029.svg",
-        YEARWIDTH,
-        YEARHEIGHT,
-        markerPos,
-        MARKERLENGTHYEAR/2 + YEARHEIGHT / 2,
-        0
-      );
-      }
-      {
-      const markerGeometry = new THREE.BoxGeometry(MARKERSIZEYEAR, MARKERLENGTHYEAR, 0); // Thin vertical line
-      const marker = new THREE.Mesh(markerGeometry, markerMaterial);
-      var markerPos = calcPosFromDate(1, 2026);
-      marker.position.set(markerPos, 0, 0);
-      scene.add(marker);
-            addSVGtoScene(
-        "svgs/2026.svg",
-        YEARWIDTH,
-        YEARHEIGHT,
-        markerPos,
-        MARKERLENGTHYEAR/2 + YEARHEIGHT / 2,
-        0
-      );
+        for (var idx = 0; idx < years.length; idx = idx + 1) {
+          var year = years[idx];
+          var path = "svgs/" + year + ".svg";
+          const markerGeometry = new THREE.BoxGeometry(
+            MARKERSIZEYEAR,
+            MARKERLENGTHYEAR,
+            0
+          ); // Thin vertical line
+          const marker = new THREE.Mesh(markerGeometry, markerMaterial);
+          var markerPos = calcPosFromDate(1, parseInt(year, 10));
+          marker.position.set(markerPos, 0, 0);
+          scene.add(marker);
+          addSVGtoScene(
+            path,
+            YEARWIDTH,
+            YEARHEIGHT,
+            markerPos,
+            MARKERLENGTHYEAR / 2 + YEARHEIGHT / 2,
+            0
+          );
+        }
+
+        let svgMeshes = [];
+
+        // Add a vertical marker at the beginning of the timeline
+        var pos;
+
+        var dir = -1;
+        for (var idx = 0; idx < texts.length; idx = idx + 1) {
+          var text = texts[idx];
+          dir = dir * -1;
+          var geo = new THREE.BoxGeometry(MARKERSIZE, MARKERLENGTH, 0); // Thin vertical line
+          var m = new THREE.Mesh(geo, markerMaterial);
+          pos = calcPosFromDate(text["month"], text["year"]);
+          m.position.set(pos, (dir * MARKERLENGTH) / 2, 0);
+          scene.add(m);
+          var path = "svgs/" + text["path"] + ".svg";
+          addSVGtoScene(
+            path,
+            TEXTWIDTH,
+            TEXTHEIGTH,
+            pos,
+            dir * (MARKERLENGTH + TEXTHEIGTH / 2),
+            0
+          );
+        }
       }
 
-      // instantiate a loader
-      // instantiate a loader
+      var cameraLenght = 0.6 * arrowLength;
 
-      let svgMeshes = [];
-
-      // Add a vertical marker at the beginning of the timeline
-      var pos;
-      {
-        var geo = new THREE.BoxGeometry(MARKERSIZE, MARKERLENGTH, 0); // Thin vertical line
-        var m = new THREE.Mesh(geo, markerMaterial);
-        pos = calcPosFromDate(8, 2024);
-        m.position.set(pos, MARKERLENGTH / 2, 0);
-        scene.add(m);
-
-      }
-      addSVGtoScene(
-        "svgs/Inkraft.svg",
-        TEXTWIDTH,
-        TEXTHEIGTH,
-        pos,
-        MARKERLENGTH + TEXTHEIGTH / 2,
-        0
-      );
-
-      {
-        var geo = new THREE.BoxGeometry(MARKERSIZE, MARKERLENGTH, 0); // Thin vertical line
-        var m = new THREE.Mesh(geo, markerMaterial);
-        pos = calcPosFromDate(11, 2024);
-        m.position.set(pos, -MARKERLENGTH / 2, 0);
-        scene.add(m);
-      }
-      addSVGtoScene(
-        "svgs/Veroeffentlichung.svg",
-        TEXTWIDTH,
-        TEXTHEIGTH,
-        pos,
-         -1*( MARKERLENGTH + TEXTHEIGTH / 2),
-        0
-      );
-
-
-      {
-        var geo = new THREE.BoxGeometry(MARKERSIZE, MARKERLENGTH, 0); // Thin vertical line
-        var m = new THREE.Mesh(geo, markerMaterial);
-        pos = calcPosFromDate(4, 2025);
-        m.position.set(pos, MARKERLENGTH / 2, 0);
-        scene.add(m);
-      }
-      addSVGtoScene(
-        "svgs/Harmon.svg",
-        TEXTWIDTH,
-        TEXTHEIGTH,
-        pos,
-         1*( MARKERLENGTH + TEXTHEIGTH / 2),
-        0
-      );
-
-      {
-        var geo = new THREE.BoxGeometry(MARKERSIZE, MARKERLENGTH, 0); // Thin vertical line
-        var m = new THREE.Mesh(geo, markerMaterial);
-        pos = calcPosFromDate(9, 2025);
-        m.position.set(pos, -1* MARKERLENGTH / 2, 0);
-        scene.add(m);
-      }
-      addSVGtoScene(
-        "svgs/Verpflicht.svg",
-        TEXTWIDTH,
-        TEXTHEIGTH,
-        pos,
-         -1*( MARKERLENGTH + TEXTHEIGTH / 2),
-        0
-      );
-
-      {
-        var geo = new THREE.BoxGeometry(MARKERSIZE, MARKERLENGTH, 0); // Thin vertical line
-        var m = new THREE.Mesh(geo, markerMaterial);
-        pos = calcPosFromDate(5, 2026);
-        m.position.set(pos, 1* MARKERLENGTH / 2, 0);
-        scene.add(m);
-      }
-      addSVGtoScene(
-        "svgs/System.svg",
-        TEXTWIDTH,
-        TEXTHEIGTH,
-        pos,
-         1*( MARKERLENGTH + TEXTHEIGTH / 2),
-        0
-      );
-
-      {
-        var geo = new THREE.BoxGeometry(MARKERSIZE, MARKERLENGTH, 0); // Thin vertical line
-        var m = new THREE.Mesh(geo, markerMaterial);
-        pos = calcPosFromDate(6, 2027);
-        m.position.set(pos, -1* MARKERLENGTH / 2, 0);
-        scene.add(m);
-      }
-      addSVGtoScene(
-        "svgs/Schritt.svg",
-        TEXTWIDTH,
-        TEXTHEIGTH,
-        pos,
-         -1*( MARKERLENGTH + TEXTHEIGTH / 2),
-        0
-      );
-
-      {
-        var geo = new THREE.BoxGeometry(MARKERSIZE, MARKERLENGTH, 0); // Thin vertical line
-        var m = new THREE.Mesh(geo, markerMaterial);
-        pos = calcPosFromDate(7, 2027);
-        m.position.set(pos, 1* MARKERLENGTH / 2, 0);
-        scene.add(m);
-      }
-      addSVGtoScene(
-        "svgs/Imple.svg",
-        TEXTWIDTH,
-        TEXTHEIGTH,
-        pos,
-         1*( MARKERLENGTH + TEXTHEIGTH / 2),
-        0
-      );
-
-      {
-        var geo = new THREE.BoxGeometry(MARKERSIZE, MARKERLENGTH, 0); // Thin vertical line
-        var m = new THREE.Mesh(geo, markerMaterial);
-        pos = calcPosFromDate(4, 2028);
-        m.position.set(pos, -1* MARKERLENGTH / 2, 0);
-        scene.add(m);
-      }
-      addSVGtoScene(
-        "svgs/DPPVerpf.svg",
-        TEXTWIDTH,
-        TEXTHEIGTH,
-        pos,
-         -1*( MARKERLENGTH + TEXTHEIGTH / 2),
-        0
-      );
-
-      {
-        var geo = new THREE.BoxGeometry(MARKERSIZE, MARKERLENGTH, 0); // Thin vertical line
-        var m = new THREE.Mesh(geo, markerMaterial);
-        pos = calcPosFromDate(10, 2028);
-        m.position.set(pos, 1* MARKERLENGTH / 2, 0);
-        scene.add(m);
-      }
-      addSVGtoScene(
-        "svgs/Ökoricht.svg",
-        TEXTWIDTH,
-        TEXTHEIGTH,
-        pos,
-         1*( MARKERLENGTH + TEXTHEIGTH / 2),
-        0
-      );
-
-
-      var cameraLenght =  0.6 * arrowLength;
-
-    // camera = new THREE.OrthographicCamera(
-    //     -cameraLenght,
-    //     cameraLenght,
-    //     cameraLenght,
-    //     -cameraLenght
-    //     // 1,
-    //     // 1000
-    //   );
-      camera = new THREE.PerspectiveCamera( ); //cameraLenght, 0.5, 1, 1000 );
-      camera.position.set(lineStart, 0, 100);
-      camera.lookAt(lineStart, 0, 0);
-
-
-
-
+      // camera = new THREE.OrthographicCamera(
+      //     -cameraLenght,
+      //     cameraLenght,
+      //     cameraLenght,
+      //     -cameraLenght
+      //     // 1,
+      //     // 1000
+      //   );
+      var camPos = lines[0].end;
+      camera = new THREE.PerspectiveCamera(); //cameraLenght, 0.5, 1, 1000 );
+      camera.position.set(camPos, 0, 100);
+      camera.lookAt(camPos, 0, 0);
 
       function animate() {
         requestAnimationFrame(animate);
 
         // Move the circle along the arrow
         camera.position.x += speed;
+        if (camera.position.x > line2Mid) {
+          camera.position.x = line1Mid
+        }
         // if (circle.position.x > lineEnd)
-          // Reset to start once end is reached
-          // circle.position.x = lineStart;
+        // Reset to start once end is reached
+        // circle.position.x = lineStart;
         renderer.render(scene, camera);
         size += 0.1;
-        if (svgMeshes[0]) {
-          // updateSVG(svgMeshes[0], 10+size, 10+size, 0, 0, 0);
-        }
+        // if (svgMeshes[0]) {
+        // updateSVG(svgMeshes[0], 10+size, 10+size, 0, 0, 0);
+        // }
         // updateTextSize("2025", size);
       }
 
@@ -392,8 +238,8 @@
 
       function calcPosFromDate(month, year) {
         // Set the start date to October 1, 2024
-        const startDate = new Date(2024, 1, 1); // Month is 0-indexed (9 is October)
-        const endDate = new Date(2029, 11, 31); // Month is 0-indexed (11 is December)
+        const startDate = new Date(2024, 5, 1); // Month is 0-indexed (9 is October)
+        const endDate = new Date(2029, 2, 31); // Month is 0-indexed (11 is December)
         const diffTimeAll = endDate - startDate;
         const diffDaysAll = diffTimeAll / (1000 * 60 * 60 * 24);
 
@@ -442,7 +288,7 @@
 
             // Store the group with its details in a map for later reference
             group.userData = { path, width, height, x, y, z }; // Store original details
-            svgMeshes.push(group); // Assuming svgMeshes is an array visible in this scope
+            // svgMeshes.push(group); // Assuming svgMeshes is an array visible in this scope
           },
           undefined,
           function (error) {
@@ -471,7 +317,7 @@
 
             // Store the mesh with its details in a map for later reference
             mesh.userData = { path, width, height, x, y, z }; // Store original details
-            svgMeshes.push(mesh); // Assuming svgMeshes is an array visible in this scope
+            // svgMeshes.push(mesh); // Assuming svgMeshes is an array visible in this scope
           },
           undefined,
           function (error) {
@@ -494,6 +340,15 @@
         mesh.userData.x = newX;
         mesh.userData.y = newY;
         mesh.userData.z = newZ;
+      }
+
+      function addText(path, month, year) {
+        var text = {
+          path: path,
+          month: month,
+          year: year,
+        };
+        texts.push(text);
       }
     </script>
   </body>
