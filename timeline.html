@@ -210,10 +210,12 @@
       //     // 1,
       //     // 1000
       //   );
-      var camPos = lines[0].end;
+      lineStart = lines[1].start;
+      lineEnd = lines[1].end;;
+      var  pos = calcPosFromDate(8,2025);
       camera = new THREE.PerspectiveCamera(); //cameraLenght, 0.5, 1, 1000 );
-      camera.position.set(camPos, 0, 100);
-      camera.lookAt(camPos, 0, 0);
+      camera.position.set(pos, 0, 100);
+      camera.lookAt(pos, 0, 0);
 
       function animate() {
         requestAnimationFrame(animate);
