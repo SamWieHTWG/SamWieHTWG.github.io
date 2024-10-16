@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Bootstrap 4 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title>three.js webgl - postprocessing - unreal bloom selective</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <style>
+      html {
+        cursor: url("cursor2.png"), auto;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      canvas {
+        display: block;
+      }
+
+      #meinButton {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 10;
+        /* Stellt sicher, dass der Button über dem Canvas liegt */
+      }
+    </style>
+  </head>
+
+  <body>
+    <script type="x-shader/x-vertex" id="vertexshader">
+
+      varying vec2 vUv;
+
+      void main() {
+
+      	vUv = uv;
+
+      	gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+
+      }
+    </script>
+
+    <script type="x-shader/x-fragment" id="fragmentshader">
+
+      uniform sampler2D baseTexture;
+      uniform sampler2D bloomTexture;
+
+      varying vec2 vUv;
+
+      void main() {
+
+      	gl_FragColor = ( texture2D( baseTexture, vUv ) + vec4( 1.0 ) * texture2D( bloomTexture, vUv ) );
+
+      }
+    </script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.min.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
+        }
+      }
+    </script>
+
+    <script type="module">
+      import * as THREE from "three";
+      import { FontLoader } from "three/addons/loaders/FontLoader.js";
+      import { SVGLoader } from "three/addons/loaders/SVGLoader.js";
+      import { TextGeometry } from "three/addons/geometries/TextGeometry.js";
+      import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+
+      const WindowWidth = window.innerWidth;
+      const WindowHeight = window.innerHeight;
+      let scene, camera, renderer, circle, arrow;
+
+      scene = new THREE.Scene();
+
+      renderer = new THREE.WebGLRenderer();
+      renderer.setSize(WindowWidth, WindowHeight);
+      renderer.setClearColor(0xf5f5f5); // Set background color to grey
+      renderer.setPixelRatio(window.devicePixelRatio);
+      document.body.appendChild(renderer.domElement);
+      const loader = new THREE.TextureLoader();
+
+      loader.load(
+        "svgs/arrow.png", // Path to the PNG image
+        function (texture) {
+          const material = new THREE.MeshBasicMaterial({
+            map: texture,
+            transparent: true, // Ensure the material supports transparency, if needed
+            side: THREE.DoubleSide, // Render both sides of the plane
+          });
+          const geometry = new THREE.PlaneGeometry(0.2, 0.2); // Use PlaneGeometry for a flat surface
+          const plane = new THREE.Mesh(geometry, material);
+          plane.position.set(0, 0, 0);
+          scene.add(plane);
+        },
+        undefined, // onProgress callback not needed here
+        function (err) {
+          console.error("An error happened while loading the texture.");
+        }
+      );
+
+      let cube1;
+      const shift = 1;
+
+      loader.load(
+        "svgs/EPD_Data.jpg", // Path to the PNG image
+        function (texture) {
+          const material = new THREE.MeshBasicMaterial({
+            map: texture,
+          });
+          const geometry = new THREE.BoxGeometry(1, 1, 1);
+          cube1 = new THREE.Mesh(geometry, material);
+          cube1.position.x = shift;
+          cube1.position.y = 0;
+          cube1.position.z = 0;
+          scene.add(cube1);
+
+          // Adding black edges
+          const edges = new THREE.EdgesGeometry(geometry); // Defaults to using 1 degree threshold
+          const lineMaterial = new THREE.LineBasicMaterial({ color: 0x444444 }); // Black
+          const lines = new THREE.LineSegments(edges, lineMaterial);
+          cube1.add(lines); // Attach lines to the cube to move with it
+        },
+        undefined, // onProgress callback not needed here
+        function (err) {
+          console.error("An error happened while loading the texture.");
+        }
+      );
+
+      let cube2;
+      const loader2 = new THREE.TextureLoader();
+      loader2.load(
+        "svgs/page_0.png", // Path to the PNG image
+        function (texture) {
+          const material = new THREE.MeshBasicMaterial({
+            map: texture,
+          });
+          const geometry = new THREE.BoxGeometry(1, 1, 1);
+          cube2 = new THREE.Mesh(geometry, material);
+          cube2.position.x = -shift;
+          cube2.position.y = 0;
+          cube2.position.z = 0;
+          scene.add(cube2);
+
+          // Adding black edges
+          const edges = new THREE.EdgesGeometry(geometry); // Defaults to using 1 degree threshold
+          const lineMaterial = new THREE.LineBasicMaterial({ color: 0x444444 }); // Black
+          const lines = new THREE.LineSegments(edges, lineMaterial);
+          cube2.add(lines); // Attach lines to the cube to move with it
+        },
+        undefined, // onProgress callback not needed here
+        function (err) {
+          console.error("An error happened while loading the texture.");
+        }
+      );
+
+      // addSVGtoScene(
+      //     "svgs/EPD_Data.svg",
+      //     200,
+      //     500,
+      //     0,
+      //     0,
+      //     0
+      //   );
+
+      // camera = new THREE.PerspectiveCamera(
+      //   75,
+      //   WindowWidth / WindowHeight,
+      //   0.1,
+      //   1000
+      // );
+      // camera.position.set(0, 0, 2);
+      // camera.lookAt(0, 0, 0);
+      // renderer.render(scene, camera);
+
+      const frustumSize = 10; // This value can be adjusted based on the scale of your scene
+      const aspect = WindowWidth / WindowHeight;
+      camera = new THREE.OrthographicCamera(
+        (frustumSize * aspect) / -2,
+        (frustumSize * aspect) / 2,
+        frustumSize / 2,
+        frustumSize / -2,
+        1,
+        1000
+      );
+      // camera.position.set(0, 0, 20);
+      var zoom = 1;
+      camera.position.set(0, zoom * 4.004076251663677, zoom * 19.5760404558702);
+      camera.lookAt(scene.position);
+      camera.zoom = 5.422879692918691;
+      camera.updateProjectionMatrix();
+
+      // OrbitControls initialisieren
+      const controls = new OrbitControls(camera, renderer.domElement);
+      controls.target.set(0, 0, 0); // Zielpunkt der Kamera
+
+      function animate() {
+        requestAnimationFrame(animate);
+
+        console.log(
+          `Camera Position - x: ${camera.position.x}, y: ${camera.position.y}, z: ${camera.position.z}`
+        );
+        console.log(`Camera zoom: ${camera.zoom}`);
+
+        // Check if cube is defined before trying to change its rotation
+        if (cube1) {
+          // cube.rotation.x += 0.01;
+          cube1.rotation.y += 0.002;
+          // cube.rotation.z += 0.01;
+        }
+        if (cube2) {
+          // cube.rotation.x += 0.01;
+          cube2.rotation.y -= 0.002;
+          // cube.rotation.z += 0.01;
+        }
+
+        // Move the circle along the arrow
+        // camera.position.x += speed;
+        // if (camera.position.x > line2Mid) {
+        //   camera.position.x = line1Mid
+        // }
+        // if (circle.position.x > lineEnd)
+        // Reset to start once end is reached
+        // circle.position.x = lineStart;
+        renderer.render(scene, camera);
+        // size += 0.1;
+        // if (svgMeshes[0]) {
+        // updateSVG(svgMeshes[0], 10+size, 10+size, 0, 0, 0);
+        // }
+        // updateTextSize("2025", size);
+      }
+
+      animate();
+
+      function addSVGtoScene(path, width, height, x, y, z) {
+        const loader = new THREE.TextureLoader();
+        loader.load(
+          path,
+          function (texture) {
+            texture.minFilter = THREE.NearestFilter; // Setting minification filter
+            texture.magFilter = THREE.NearestFilter; // Setting magnification filter
+
+            const material = new THREE.MeshBasicMaterial({
+              map: texture,
+              transparent: true, // Useful for SVGs with transparent backgrounds
+              side: THREE.DoubleSide, // Render texture on both sides of the mesh
+            });
+            const geometry = new THREE.PlaneGeometry(width, height);
+            const mesh = new THREE.Mesh(geometry, material);
+            mesh.position.set(x, y, z);
+            scene.add(mesh);
+
+            // Store the mesh with its details in a map for later reference
+            mesh.userData = { path, width, height, x, y, z }; // Store original details
+            // svgMeshes.push(mesh); // Assuming svgMeshes is an array visible in this scope
+          },
+          undefined,
+          function (error) {
+            console.error("Error loading SVG:", error);
+          }
+        );
+      }
+    </script>
+  </body>
+</html>

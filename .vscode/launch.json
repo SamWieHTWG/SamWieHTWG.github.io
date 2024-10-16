@@ -38,6 +38,13 @@
             "name": "Open timeline.html",
           "url": "http://localhost:5500/timeline.html",
           "webRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Open pdf2json.html",
+          "url": "http://localhost:5500/pdf2json.html",
+          "webRoot": "${workspaceFolder}"
         }
     ]
 }
