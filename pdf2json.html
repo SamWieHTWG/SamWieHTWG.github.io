@@ -93,24 +93,24 @@
       document.body.appendChild(renderer.domElement);
       const loader = new THREE.TextureLoader();
 
-      loader.load(
-        "svgs/arrow.png", // Path to the PNG image
-        function (texture) {
-          const material = new THREE.MeshBasicMaterial({
-            map: texture,
-            transparent: true, // Ensure the material supports transparency, if needed
-            side: THREE.DoubleSide, // Render both sides of the plane
-          });
-          const geometry = new THREE.PlaneGeometry(0.2, 0.2); // Use PlaneGeometry for a flat surface
-          const plane = new THREE.Mesh(geometry, material);
-          plane.position.set(0, 0, 0);
-          scene.add(plane);
-        },
-        undefined, // onProgress callback not needed here
-        function (err) {
-          console.error("An error happened while loading the texture.");
-        }
-      );
+      // loader.load(
+      //   "svgs/arrow.png", // Path to the PNG image
+      //   function (texture) {
+      //     const material = new THREE.MeshBasicMaterial({
+      //       map: texture,
+      //       transparent: true, // Ensure the material supports transparency, if needed
+      //       side: THREE.DoubleSide, // Render both sides of the plane
+      //     });
+      //     const geometry = new THREE.PlaneGeometry(0.2, 0.2); // Use PlaneGeometry for a flat surface
+      //     const plane = new THREE.Mesh(geometry, material);
+      //     plane.position.set(0, 0, 0);
+      //     scene.add(plane);
+      //   },
+      //   undefined, // onProgress callback not needed here
+      //   function (err) {
+      //     console.error("An error happened while loading the texture.");
+      //   }
+      // );
 
       let cube1;
       const shift = 1;
@@ -210,10 +210,6 @@
       function animate() {
         requestAnimationFrame(animate);
 
-        console.log(
-          `Camera Position - x: ${camera.position.x}, y: ${camera.position.y}, z: ${camera.position.z}`
-        );
-        console.log(`Camera zoom: ${camera.zoom}`);
 
         // Check if cube is defined before trying to change its rotation
         if (cube1) {
