@@ -1,0 +1,1 @@
+import"../chunks/CWj6FrbW.js";import"../chunks/D7Zt9-mt.js";import{f as o,a as r,$ as n,n as p}from"../chunks/C69tEHJk.js";import{h as s}from"../chunks/Bc6qAA64.js";import"../chunks/MTg-g4m-.js";var m=o("<h1>Contact Us</h1> <p>This is the contact page for statiqs.</p>",1);function d(t){var a=m();s(e=>{n.title="Contact - statiqs"}),p(2),r(t,a)}export{d as component};
