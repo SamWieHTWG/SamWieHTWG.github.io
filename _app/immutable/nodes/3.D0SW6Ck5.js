@@ -1,0 +1,1 @@
+import{f as a,h as r,a as s}from"../chunks/b0vKRyRU.js";import"../chunks/CYP6ejXN.js";import{$ as p,n as i}from"../chunks/B_J1m_EM.js";import"../chunks/CCDpoyGx.js";import"../chunks/ChfWBXJp.js";var m=a("<h1>About statiqs</h1> <p>This is the about page for statiqs.</p>",1);function $(t){var o=m();r(e=>{p.title="About - statiqs"}),i(2),s(t,o)}export{$ as component};
