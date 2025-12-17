@@ -32,12 +32,12 @@
           "t_2": 2.5,
           "tt_e": 36,
           "tt_q": 41.0,
-          "tt_b": 51.0,
+          "tt_b": 50.6,
           "aa": 120000,
           "aa_str": 114464,
           "aa_r": 109960.0,
           "ss_1": 6.97,
-          "t_s": 5,
+          "t_s": 4.8,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -58,7 +58,7 @@
           "rr_x": 30.0,
           "rr_y": 6.0,
           "mm": 19.39,
-          "t_smin": 5
+          "t_smin": 4.8
         }
       }
     },
@@ -114,7 +114,7 @@
           "rr_x": 15.0,
           "rr_y": 6.0,
           "mm": 10.83,
-          "t_smin": 3
+          "t_smin": 2.4
         }
       }
     },
@@ -144,12 +144,12 @@
           "t_2": 2.5,
           "tt_e": 20,
           "tt_q": 25.0,
-          "tt_b": 30.0,
+          "tt_b": 29.0,
           "aa": 120000,
           "aa_str": 114464,
           "aa_r": 109960.0,
           "ss_1": 8.37,
-          "t_s": 5,
+          "t_s": 4,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -170,7 +170,7 @@
           "rr_x": 54.0,
           "rr_y": 10.8,
           "mm": 50.25,
-          "t_smin": 5
+          "t_smin": 4.0
         }
       }
     },
@@ -226,7 +226,7 @@
           "rr_x": 27.0,
           "rr_y": 10.8,
           "mm": 28.07,
-          "t_smin": 2
+          "t_smin": 2.0
         }
       }
     },
@@ -253,15 +253,15 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 36,
-          "tt_q": 46,
-          "tt_b": 56,
+          "tt_q": 41.0,
+          "tt_b": 50.6,
           "aa": 120000,
           "aa_str": 114464,
           "aa_r": 109960.0,
           "ss_1": 6.97,
-          "t_s": 5,
+          "t_s": 4.8,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -274,17 +274,17 @@
         },
         "nachw_params": {
           "epsi_cd": 8.698,
-          "epsi_qd": 0.222,
+          "epsi_qd": 0.249,
           "epsi_ad": 1.52,
-          "epsi_td": 10.44,
-          "verdreh_nachw": 0.532,
+          "epsi_td": 10.467,
+          "verdreh_nachw": 0.546,
           "stab_nachw": 1.072,
           "rr_x": 30.0,
           "rr_y": 6.0,
           "mm": 19.39,
-          "t_smin": 5,
+          "t_smin": 4.8,
           "sigma_cdmin": 9.09,
-          "nachw_gleit": 0.23
+          "nachw_gleit": 0.121
         }
       }
     },
@@ -311,10 +311,10 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 36,
-          "tt_q": 46,
-          "tt_b": 54,
+          "tt_q": 41.0,
+          "tt_b": 49.0,
           "aa": 120000,
           "aa_str": 114464,
           "aa_r": 111920.00000000001,
@@ -332,17 +332,17 @@
         },
         "nachw_params": {
           "epsi_cd": 4.273,
-          "epsi_qd": 0.117,
+          "epsi_qd": 0.131,
           "epsi_ad": 1.027,
-          "epsi_td": 5.417,
-          "verdreh_nachw": 0.711,
+          "epsi_td": 5.431,
+          "verdreh_nachw": 0.728,
           "stab_nachw": 0.527,
           "rr_x": 15.0,
           "rr_y": 6.0,
           "mm": 10.83,
-          "t_smin": 3,
+          "t_smin": 2.4,
           "sigma_cdmin": 4.47,
-          "nachw_gleit": 0.193
+          "nachw_gleit": 0.102
         }
       }
     },
@@ -369,15 +369,15 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 20,
-          "tt_q": 30,
-          "tt_b": 35,
+          "tt_q": 25.0,
+          "tt_b": 29.0,
           "aa": 120000,
           "aa_str": 114464,
           "aa_r": 109960.0,
           "ss_1": 8.37,
-          "t_s": 5,
+          "t_s": 4,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -390,17 +390,17 @@
         },
         "nachw_params": {
           "epsi_cd": 7.244,
-          "epsi_qd": 0.34,
+          "epsi_qd": 0.408,
           "epsi_ad": 3.284,
-          "epsi_td": 10.868,
-          "verdreh_nachw": 1.259,
+          "epsi_td": 10.936,
+          "verdreh_nachw": 1.338,
           "stab_nachw": 0.496,
           "rr_x": 54.0,
           "rr_y": 10.8,
           "mm": 50.25,
-          "t_smin": 5,
+          "t_smin": 4.0,
           "sigma_cdmin": 9.09,
-          "nachw_gleit": 0.414
+          "nachw_gleit": 0.219
         }
       }
     },
@@ -427,10 +427,10 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 20,
-          "tt_q": 30,
-          "tt_b": 34,
+          "tt_q": 25.0,
+          "tt_b": 29.0,
           "aa": 120000,
           "aa_str": 114464,
           "aa_r": 111920.00000000001,
@@ -448,17 +448,17 @@
         },
         "nachw_params": {
           "epsi_cd": 3.558,
-          "epsi_qd": 0.18,
+          "epsi_qd": 0.215,
           "epsi_ad": 2.218,
-          "epsi_td": 5.956,
-          "verdreh_nachw": 1.682,
+          "epsi_td": 5.991,
+          "verdreh_nachw": 1.79,
           "stab_nachw": 0.244,
           "rr_x": 27.0,
           "rr_y": 10.8,
           "mm": 28.07,
-          "t_smin": 2,
+          "t_smin": 2.0,
           "sigma_cdmin": 4.47,
-          "nachw_gleit": 0.348
+          "nachw_gleit": 0.183
         }
       }
     },
@@ -488,12 +488,12 @@
           "t_2": 2.5,
           "tt_e": 36,
           "tt_q": 41.0,
-          "tt_b": 51.0,
+          "tt_b": 50.6,
           "aa": 120000,
           "aa_str": 114464,
           "aa_r": 109960.0,
           "ss_1": 6.97,
-          "t_s": 5,
+          "t_s": 4.8,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -514,7 +514,7 @@
           "rr_x": 30.0,
           "rr_y": 6.0,
           "mm": 19.39,
-          "t_smin": 5
+          "t_smin": 4.8
         }
       }
     },
@@ -570,7 +570,7 @@
           "rr_x": 15.0,
           "rr_y": 6.0,
           "mm": 10.83,
-          "t_smin": 3
+          "t_smin": 2.4
         }
       }
     },
@@ -600,12 +600,12 @@
           "t_2": 2.5,
           "tt_e": 20,
           "tt_q": 25.0,
-          "tt_b": 30.0,
+          "tt_b": 29.0,
           "aa": 120000,
           "aa_str": 114464,
           "aa_r": 109960.0,
           "ss_1": 8.37,
-          "t_s": 5,
+          "t_s": 4,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -626,7 +626,7 @@
           "rr_x": 54.0,
           "rr_y": 10.8,
           "mm": 50.25,
-          "t_smin": 5
+          "t_smin": 4.0
         }
       }
     },
@@ -682,7 +682,7 @@
           "rr_x": 27.0,
           "rr_y": 10.8,
           "mm": 28.07,
-          "t_smin": 2
+          "t_smin": 2.0
         }
       }
     },
@@ -709,15 +709,15 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 36,
-          "tt_q": 46,
-          "tt_b": 56,
+          "tt_q": 41.0,
+          "tt_b": 50.6,
           "aa": 120000,
           "aa_str": 114464,
           "aa_r": 109960.0,
           "ss_1": 6.97,
-          "t_s": 5,
+          "t_s": 4.8,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -730,17 +730,17 @@
         },
         "nachw_params": {
           "epsi_cd": 8.698,
-          "epsi_qd": 0.222,
+          "epsi_qd": 0.249,
           "epsi_ad": 1.52,
-          "epsi_td": 10.44,
-          "verdreh_nachw": 0.532,
+          "epsi_td": 10.467,
+          "verdreh_nachw": 0.546,
           "stab_nachw": 1.072,
           "rr_x": 30.0,
           "rr_y": 6.0,
           "mm": 19.39,
-          "t_smin": 5,
+          "t_smin": 4.8,
           "sigma_cdmin": 9.09,
-          "nachw_gleit": 0.23
+          "nachw_gleit": 0.121
         }
       }
     },
@@ -767,10 +767,10 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 36,
-          "tt_q": 46,
-          "tt_b": 54,
+          "tt_q": 41.0,
+          "tt_b": 49.0,
           "aa": 120000,
           "aa_str": 114464,
           "aa_r": 111920.00000000001,
@@ -788,17 +788,17 @@
         },
         "nachw_params": {
           "epsi_cd": 4.273,
-          "epsi_qd": 0.117,
+          "epsi_qd": 0.131,
           "epsi_ad": 1.027,
-          "epsi_td": 5.417,
-          "verdreh_nachw": 0.711,
+          "epsi_td": 5.431,
+          "verdreh_nachw": 0.728,
           "stab_nachw": 0.527,
           "rr_x": 15.0,
           "rr_y": 6.0,
           "mm": 10.83,
-          "t_smin": 3,
+          "t_smin": 2.4,
           "sigma_cdmin": 4.47,
-          "nachw_gleit": 0.193
+          "nachw_gleit": 0.102
         }
       }
     },
@@ -825,15 +825,15 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 20,
-          "tt_q": 30,
-          "tt_b": 35,
+          "tt_q": 25.0,
+          "tt_b": 29.0,
           "aa": 120000,
           "aa_str": 114464,
           "aa_r": 109960.0,
           "ss_1": 8.37,
-          "t_s": 5,
+          "t_s": 4,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -846,17 +846,17 @@
         },
         "nachw_params": {
           "epsi_cd": 7.244,
-          "epsi_qd": 0.34,
+          "epsi_qd": 0.408,
           "epsi_ad": 3.284,
-          "epsi_td": 10.868,
-          "verdreh_nachw": 1.259,
+          "epsi_td": 10.936,
+          "verdreh_nachw": 1.338,
           "stab_nachw": 0.496,
           "rr_x": 54.0,
           "rr_y": 10.8,
           "mm": 50.25,
-          "t_smin": 5,
+          "t_smin": 4.0,
           "sigma_cdmin": 9.09,
-          "nachw_gleit": 0.414
+          "nachw_gleit": 0.219
         }
       }
     },
@@ -883,10 +883,10 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 20,
-          "tt_q": 30,
-          "tt_b": 34,
+          "tt_q": 25.0,
+          "tt_b": 29.0,
           "aa": 120000,
           "aa_str": 114464,
           "aa_r": 111920.00000000001,
@@ -904,17 +904,17 @@
         },
         "nachw_params": {
           "epsi_cd": 3.558,
-          "epsi_qd": 0.18,
+          "epsi_qd": 0.215,
           "epsi_ad": 2.218,
-          "epsi_td": 5.956,
-          "verdreh_nachw": 1.682,
+          "epsi_td": 5.991,
+          "verdreh_nachw": 1.79,
           "stab_nachw": 0.244,
           "rr_x": 27.0,
           "rr_y": 10.8,
           "mm": 28.07,
-          "t_smin": 2,
+          "t_smin": 2.0,
           "sigma_cdmin": 4.47,
-          "nachw_gleit": 0.348
+          "nachw_gleit": 0.183
         }
       }
     },
@@ -944,12 +944,12 @@
           "t_2": 2.5,
           "tt_e": 36,
           "tt_q": 41.0,
-          "tt_b": 61.0,
+          "tt_b": 60.0,
           "aa": 62500,
           "aa_str": 58564,
           "aa_r": 55660.0,
           "ss_1": 5.04,
-          "t_s": 10,
+          "t_s": 9.5,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -970,7 +970,7 @@
           "rr_x": 15.62,
           "rr_y": 3.12,
           "mm": 4.22,
-          "t_smin": 10
+          "t_smin": 9.5
         }
       }
     },
@@ -1000,12 +1000,12 @@
           "t_2": 2.5,
           "tt_e": 36,
           "tt_q": 41.0,
-          "tt_b": 51.0,
+          "tt_b": 50.4,
           "aa": 62500,
           "aa_str": 58564,
           "aa_r": 56870.0,
           "ss_1": 5.04,
-          "t_s": 5,
+          "t_s": 4.7,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -1026,7 +1026,7 @@
           "rr_x": 7.81,
           "rr_y": 3.12,
           "mm": 2.36,
-          "t_smin": 5
+          "t_smin": 4.7
         }
       }
     },
@@ -1061,7 +1061,7 @@
           "aa_str": 58564,
           "aa_r": 55660.0,
           "ss_1": 6.05,
-          "t_s": 8,
+          "t_s": 8.0,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -1082,7 +1082,7 @@
           "rr_x": 28.12,
           "rr_y": 5.62,
           "mm": 10.95,
-          "t_smin": 8
+          "t_smin": 8.0
         }
       }
     },
@@ -1138,7 +1138,7 @@
           "rr_x": 14.06,
           "rr_y": 5.62,
           "mm": 6.11,
-          "t_smin": 4
+          "t_smin": 3.9
         }
       }
     },
@@ -1165,15 +1165,15 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 36,
-          "tt_q": 46,
-          "tt_b": 66,
+          "tt_q": 41.0,
+          "tt_b": 60.0,
           "aa": 62500,
           "aa_str": 58564,
           "aa_r": 55660.0,
           "ss_1": 5.04,
-          "t_s": 10,
+          "t_s": 9.5,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -1186,17 +1186,17 @@
         },
         "nachw_params": {
           "epsi_cd": 23.765,
-          "epsi_qd": 0.222,
+          "epsi_qd": 0.249,
           "epsi_ad": 0.881,
-          "epsi_td": 24.868,
-          "verdreh_nachw": 0.11,
+          "epsi_td": 24.895,
+          "verdreh_nachw": 0.113,
           "stab_nachw": 3.535,
           "rr_x": 15.62,
           "rr_y": 3.12,
           "mm": 4.22,
-          "t_smin": 10,
+          "t_smin": 9.5,
           "sigma_cdmin": 17.97,
-          "nachw_gleit": 0.136
+          "nachw_gleit": 0.072
         }
       }
     },
@@ -1223,15 +1223,15 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 36,
-          "tt_q": 46,
-          "tt_b": 56,
+          "tt_q": 41.0,
+          "tt_b": 50.4,
           "aa": 62500,
           "aa_str": 58564,
           "aa_r": 56870.0,
           "ss_1": 5.04,
-          "t_s": 5,
+          "t_s": 4.7,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -1244,17 +1244,17 @@
         },
         "nachw_params": {
           "epsi_cd": 11.63,
-          "epsi_qd": 0.117,
+          "epsi_qd": 0.131,
           "epsi_ad": 0.542,
-          "epsi_td": 12.289,
-          "verdreh_nachw": 0.138,
+          "epsi_td": 12.303,
+          "verdreh_nachw": 0.141,
           "stab_nachw": 1.73,
           "rr_x": 7.81,
           "rr_y": 3.12,
           "mm": 2.36,
-          "t_smin": 5,
+          "t_smin": 4.7,
           "sigma_cdmin": 8.79,
-          "nachw_gleit": 0.125
+          "nachw_gleit": 0.066
         }
       }
     },
@@ -1281,15 +1281,15 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 20,
-          "tt_q": 30,
-          "tt_b": 38,
+          "tt_q": 25.0,
+          "tt_b": 33.0,
           "aa": 62500,
           "aa_str": 58564,
           "aa_r": 55660.0,
           "ss_1": 6.05,
-          "t_s": 8,
+          "t_s": 8.0,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -1302,17 +1302,17 @@
         },
         "nachw_params": {
           "epsi_cd": 19.797,
-          "epsi_qd": 0.34,
+          "epsi_qd": 0.408,
           "epsi_ad": 1.903,
-          "epsi_td": 22.04,
-          "verdreh_nachw": 0.267,
+          "epsi_td": 22.108,
+          "verdreh_nachw": 0.283,
           "stab_nachw": 1.636,
           "rr_x": 28.12,
           "rr_y": 5.62,
           "mm": 10.95,
-          "t_smin": 8,
+          "t_smin": 8.0,
           "sigma_cdmin": 17.97,
-          "nachw_gleit": 0.246
+          "nachw_gleit": 0.13
         }
       }
     },
@@ -1339,10 +1339,10 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 20,
-          "tt_q": 30,
-          "tt_b": 34,
+          "tt_q": 25.0,
+          "tt_b": 29.0,
           "aa": 62500,
           "aa_str": 58564,
           "aa_r": 56870.0,
@@ -1360,17 +1360,17 @@
         },
         "nachw_params": {
           "epsi_cd": 9.688,
-          "epsi_qd": 0.18,
+          "epsi_qd": 0.215,
           "epsi_ad": 1.171,
-          "epsi_td": 11.039,
-          "verdreh_nachw": 0.334,
+          "epsi_td": 11.074,
+          "verdreh_nachw": 0.353,
           "stab_nachw": 0.801,
           "rr_x": 14.06,
           "rr_y": 5.62,
           "mm": 6.11,
-          "t_smin": 4,
+          "t_smin": 3.9,
           "sigma_cdmin": 8.79,
-          "nachw_gleit": 0.226
+          "nachw_gleit": 0.119
         }
       }
     },
@@ -1400,12 +1400,12 @@
           "t_2": 2.5,
           "tt_e": 36,
           "tt_q": 41.0,
-          "tt_b": 61.0,
+          "tt_b": 60.0,
           "aa": 62500,
           "aa_str": 58564,
           "aa_r": 55660.0,
           "ss_1": 5.04,
-          "t_s": 10,
+          "t_s": 9.5,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -1426,7 +1426,7 @@
           "rr_x": 15.62,
           "rr_y": 3.12,
           "mm": 4.22,
-          "t_smin": 10
+          "t_smin": 9.5
         }
       }
     },
@@ -1456,12 +1456,12 @@
           "t_2": 2.5,
           "tt_e": 36,
           "tt_q": 41.0,
-          "tt_b": 51.0,
+          "tt_b": 50.4,
           "aa": 62500,
           "aa_str": 58564,
           "aa_r": 56870.0,
           "ss_1": 5.04,
-          "t_s": 5,
+          "t_s": 4.7,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -1482,7 +1482,7 @@
           "rr_x": 7.81,
           "rr_y": 3.12,
           "mm": 2.36,
-          "t_smin": 5
+          "t_smin": 4.7
         }
       }
     },
@@ -1517,7 +1517,7 @@
           "aa_str": 58564,
           "aa_r": 55660.0,
           "ss_1": 6.05,
-          "t_s": 8,
+          "t_s": 8.0,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -1538,7 +1538,7 @@
           "rr_x": 28.12,
           "rr_y": 5.62,
           "mm": 10.95,
-          "t_smin": 8
+          "t_smin": 8.0
         }
       }
     },
@@ -1594,7 +1594,7 @@
           "rr_x": 14.06,
           "rr_y": 5.62,
           "mm": 6.11,
-          "t_smin": 4
+          "t_smin": 3.9
         }
       }
     },
@@ -1621,15 +1621,15 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 36,
-          "tt_q": 46,
-          "tt_b": 66,
+          "tt_q": 41.0,
+          "tt_b": 60.0,
           "aa": 62500,
           "aa_str": 58564,
           "aa_r": 55660.0,
           "ss_1": 5.04,
-          "t_s": 10,
+          "t_s": 9.5,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -1642,17 +1642,17 @@
         },
         "nachw_params": {
           "epsi_cd": 23.765,
-          "epsi_qd": 0.222,
+          "epsi_qd": 0.249,
           "epsi_ad": 0.881,
-          "epsi_td": 24.868,
-          "verdreh_nachw": 0.11,
+          "epsi_td": 24.895,
+          "verdreh_nachw": 0.113,
           "stab_nachw": 3.535,
           "rr_x": 15.62,
           "rr_y": 3.12,
           "mm": 4.22,
-          "t_smin": 10,
+          "t_smin": 9.5,
           "sigma_cdmin": 17.97,
-          "nachw_gleit": 0.136
+          "nachw_gleit": 0.072
         }
       }
     },
@@ -1679,15 +1679,15 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 36,
-          "tt_q": 46,
-          "tt_b": 56,
+          "tt_q": 41.0,
+          "tt_b": 50.4,
           "aa": 62500,
           "aa_str": 58564,
           "aa_r": 56870.0,
           "ss_1": 5.04,
-          "t_s": 5,
+          "t_s": 4.7,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -1700,17 +1700,17 @@
         },
         "nachw_params": {
           "epsi_cd": 11.63,
-          "epsi_qd": 0.117,
+          "epsi_qd": 0.131,
           "epsi_ad": 0.542,
-          "epsi_td": 12.289,
-          "verdreh_nachw": 0.138,
+          "epsi_td": 12.303,
+          "verdreh_nachw": 0.141,
           "stab_nachw": 1.73,
           "rr_x": 7.81,
           "rr_y": 3.12,
           "mm": 2.36,
-          "t_smin": 5,
+          "t_smin": 4.7,
           "sigma_cdmin": 8.79,
-          "nachw_gleit": 0.125
+          "nachw_gleit": 0.066
         }
       }
     },
@@ -1737,15 +1737,15 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 20,
-          "tt_q": 30,
-          "tt_b": 38,
+          "tt_q": 25.0,
+          "tt_b": 33.0,
           "aa": 62500,
           "aa_str": 58564,
           "aa_r": 55660.0,
           "ss_1": 6.05,
-          "t_s": 8,
+          "t_s": 8.0,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -1758,17 +1758,17 @@
         },
         "nachw_params": {
           "epsi_cd": 19.797,
-          "epsi_qd": 0.34,
+          "epsi_qd": 0.408,
           "epsi_ad": 1.903,
-          "epsi_td": 22.04,
-          "verdreh_nachw": 0.267,
+          "epsi_td": 22.108,
+          "verdreh_nachw": 0.283,
           "stab_nachw": 1.636,
           "rr_x": 28.12,
           "rr_y": 5.62,
           "mm": 10.95,
-          "t_smin": 8,
+          "t_smin": 8.0,
           "sigma_cdmin": 17.97,
-          "nachw_gleit": 0.246
+          "nachw_gleit": 0.13
         }
       }
     },
@@ -1795,10 +1795,10 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 20,
-          "tt_q": 30,
-          "tt_b": 34,
+          "tt_q": 25.0,
+          "tt_b": 29.0,
           "aa": 62500,
           "aa_str": 58564,
           "aa_r": 56870.0,
@@ -1816,17 +1816,17 @@
         },
         "nachw_params": {
           "epsi_cd": 9.688,
-          "epsi_qd": 0.18,
+          "epsi_qd": 0.215,
           "epsi_ad": 1.171,
-          "epsi_td": 11.039,
-          "verdreh_nachw": 0.334,
+          "epsi_td": 11.074,
+          "verdreh_nachw": 0.353,
           "stab_nachw": 0.801,
           "rr_x": 14.06,
           "rr_y": 5.62,
           "mm": 6.11,
-          "t_smin": 4,
+          "t_smin": 3.9,
           "sigma_cdmin": 8.79,
-          "nachw_gleit": 0.226
+          "nachw_gleit": 0.119
         }
       }
     },
@@ -1856,12 +1856,12 @@
           "t_2": 2.5,
           "tt_e": 36,
           "tt_q": 41.0,
-          "tt_b": 63.0,
+          "tt_b": 61.2,
           "aa": 60000,
           "aa_str": 56064,
           "aa_r": 52760.0,
           "ss_1": 4.83,
-          "t_s": 11,
+          "t_s": 10.1,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -1882,7 +1882,7 @@
           "rr_x": 15.0,
           "rr_y": 3.0,
           "mm": 1.83,
-          "t_smin": 11
+          "t_smin": 10.1
         }
       }
     },
@@ -1912,12 +1912,12 @@
           "t_2": 2.5,
           "tt_e": 36,
           "tt_q": 41.0,
-          "tt_b": 51.0,
+          "tt_b": 50.8,
           "aa": 60000,
           "aa_str": 56064,
           "aa_r": 54220.0,
           "ss_1": 4.83,
-          "t_s": 5,
+          "t_s": 4.9,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -1938,7 +1938,7 @@
           "rr_x": 7.5,
           "rr_y": 3.0,
           "mm": 1.02,
-          "t_smin": 5
+          "t_smin": 4.9
         }
       }
     },
@@ -1968,12 +1968,12 @@
           "t_2": 2.5,
           "tt_e": 20,
           "tt_q": 25.0,
-          "tt_b": 34.0,
+          "tt_b": 33.4,
           "aa": 60000,
           "aa_str": 56064,
           "aa_r": 52760.0,
           "ss_1": 5.79,
-          "t_s": 9,
+          "t_s": 8.4,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -1994,7 +1994,7 @@
           "rr_x": 27.0,
           "rr_y": 5.4,
           "mm": 4.75,
-          "t_smin": 9
+          "t_smin": 8.4
         }
       }
     },
@@ -2024,12 +2024,12 @@
           "t_2": 2.5,
           "tt_e": 20,
           "tt_q": 25.0,
-          "tt_b": 30.0,
+          "tt_b": 29.1,
           "aa": 60000,
           "aa_str": 56064,
           "aa_r": 54220.0,
           "ss_1": 5.79,
-          "t_s": 5,
+          "t_s": 4.1,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -2050,7 +2050,7 @@
           "rr_x": 13.5,
           "rr_y": 5.4,
           "mm": 2.65,
-          "t_smin": 5
+          "t_smin": 4.1
         }
       }
     },
@@ -2077,15 +2077,15 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 36,
-          "tt_q": 46,
-          "tt_b": 68,
+          "tt_q": 41.0,
+          "tt_b": 61.2,
           "aa": 60000,
           "aa_str": 56064,
           "aa_r": 52760.0,
           "ss_1": 4.83,
-          "t_s": 11,
+          "t_s": 10.1,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -2098,17 +2098,17 @@
         },
         "nachw_params": {
           "epsi_cd": 26.161,
-          "epsi_qd": 0.222,
+          "epsi_qd": 0.249,
           "epsi_ad": 0.723,
-          "epsi_td": 27.106,
-          "verdreh_nachw": 0.092,
+          "epsi_td": 27.133,
+          "verdreh_nachw": 0.094,
           "stab_nachw": 4.905,
           "rr_x": 15.0,
           "rr_y": 3.0,
           "mm": 1.83,
-          "t_smin": 11,
+          "t_smin": 10.1,
           "sigma_cdmin": 18.95,
-          "nachw_gleit": 0.132
+          "nachw_gleit": 0.07
         }
       }
     },
@@ -2135,15 +2135,15 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 36,
-          "tt_q": 46,
-          "tt_b": 56,
+          "tt_q": 41.0,
+          "tt_b": 50.8,
           "aa": 60000,
           "aa_str": 56064,
           "aa_r": 54220.0,
           "ss_1": 4.83,
-          "t_s": 5,
+          "t_s": 4.9,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -2156,17 +2156,17 @@
         },
         "nachw_params": {
           "epsi_cd": 12.728,
-          "epsi_qd": 0.117,
+          "epsi_qd": 0.131,
           "epsi_ad": 0.509,
-          "epsi_td": 13.354,
-          "verdreh_nachw": 0.127,
+          "epsi_td": 13.368,
+          "verdreh_nachw": 0.13,
           "stab_nachw": 2.387,
           "rr_x": 7.5,
           "rr_y": 3.0,
           "mm": 1.02,
-          "t_smin": 5,
+          "t_smin": 4.9,
           "sigma_cdmin": 9.22,
-          "nachw_gleit": 0.122
+          "nachw_gleit": 0.064
         }
       }
     },
@@ -2193,15 +2193,15 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 20,
-          "tt_q": 30,
-          "tt_b": 39,
+          "tt_q": 25.0,
+          "tt_b": 33.4,
           "aa": 60000,
           "aa_str": 56064,
           "aa_r": 52760.0,
           "ss_1": 5.79,
-          "t_s": 9,
+          "t_s": 8.4,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -2214,17 +2214,17 @@
         },
         "nachw_params": {
           "epsi_cd": 21.824,
-          "epsi_qd": 0.34,
+          "epsi_qd": 0.408,
           "epsi_ad": 1.561,
-          "epsi_td": 23.725,
-          "verdreh_nachw": 0.224,
+          "epsi_td": 23.793,
+          "verdreh_nachw": 0.237,
           "stab_nachw": 2.273,
           "rr_x": 27.0,
           "rr_y": 5.4,
           "mm": 4.75,
-          "t_smin": 9,
+          "t_smin": 8.4,
           "sigma_cdmin": 18.95,
-          "nachw_gleit": 0.238
+          "nachw_gleit": 0.126
         }
       }
     },
@@ -2251,15 +2251,15 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 20,
-          "tt_q": 30,
-          "tt_b": 35,
+          "tt_q": 25.0,
+          "tt_b": 29.1,
           "aa": 60000,
           "aa_str": 56064,
           "aa_r": 54220.0,
           "ss_1": 5.79,
-          "t_s": 5,
+          "t_s": 4.1,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -2272,17 +2272,17 @@
         },
         "nachw_params": {
           "epsi_cd": 10.618,
-          "epsi_qd": 0.18,
+          "epsi_qd": 0.215,
           "epsi_ad": 1.1,
-          "epsi_td": 11.898,
-          "verdreh_nachw": 0.307,
+          "epsi_td": 11.933,
+          "verdreh_nachw": 0.325,
           "stab_nachw": 1.106,
           "rr_x": 13.5,
           "rr_y": 5.4,
           "mm": 2.65,
-          "t_smin": 5,
+          "t_smin": 4.1,
           "sigma_cdmin": 9.22,
-          "nachw_gleit": 0.219
+          "nachw_gleit": 0.115
         }
       }
     },
@@ -2312,12 +2312,12 @@
           "t_2": 2.5,
           "tt_e": 36,
           "tt_q": 41.0,
-          "tt_b": 63.0,
+          "tt_b": 61.2,
           "aa": 60000,
           "aa_str": 56064,
           "aa_r": 52760.0,
           "ss_1": 4.83,
-          "t_s": 11,
+          "t_s": 10.1,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -2338,7 +2338,7 @@
           "rr_x": 15.0,
           "rr_y": 3.0,
           "mm": 1.83,
-          "t_smin": 11
+          "t_smin": 10.1
         }
       }
     },
@@ -2368,12 +2368,12 @@
           "t_2": 2.5,
           "tt_e": 36,
           "tt_q": 41.0,
-          "tt_b": 51.0,
+          "tt_b": 50.8,
           "aa": 60000,
           "aa_str": 56064,
           "aa_r": 54220.0,
           "ss_1": 4.83,
-          "t_s": 5,
+          "t_s": 4.9,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -2394,7 +2394,7 @@
           "rr_x": 7.5,
           "rr_y": 3.0,
           "mm": 1.02,
-          "t_smin": 5
+          "t_smin": 4.9
         }
       }
     },
@@ -2424,12 +2424,12 @@
           "t_2": 2.5,
           "tt_e": 20,
           "tt_q": 25.0,
-          "tt_b": 34.0,
+          "tt_b": 33.4,
           "aa": 60000,
           "aa_str": 56064,
           "aa_r": 52760.0,
           "ss_1": 5.79,
-          "t_s": 9,
+          "t_s": 8.4,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -2450,7 +2450,7 @@
           "rr_x": 27.0,
           "rr_y": 5.4,
           "mm": 4.75,
-          "t_smin": 9
+          "t_smin": 8.4
         }
       }
     },
@@ -2480,12 +2480,12 @@
           "t_2": 2.5,
           "tt_e": 20,
           "tt_q": 25.0,
-          "tt_b": 30.0,
+          "tt_b": 29.1,
           "aa": 60000,
           "aa_str": 56064,
           "aa_r": 54220.0,
           "ss_1": 5.79,
-          "t_s": 5,
+          "t_s": 4.1,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -2506,7 +2506,7 @@
           "rr_x": 13.5,
           "rr_y": 5.4,
           "mm": 2.65,
-          "t_smin": 5
+          "t_smin": 4.1
         }
       }
     },
@@ -2533,15 +2533,15 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 36,
-          "tt_q": 46,
-          "tt_b": 68,
+          "tt_q": 41.0,
+          "tt_b": 61.2,
           "aa": 60000,
           "aa_str": 56064,
           "aa_r": 52760.0,
           "ss_1": 4.83,
-          "t_s": 11,
+          "t_s": 10.1,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -2554,17 +2554,17 @@
         },
         "nachw_params": {
           "epsi_cd": 26.161,
-          "epsi_qd": 0.222,
+          "epsi_qd": 0.249,
           "epsi_ad": 0.723,
-          "epsi_td": 27.106,
-          "verdreh_nachw": 0.092,
+          "epsi_td": 27.133,
+          "verdreh_nachw": 0.094,
           "stab_nachw": 4.905,
           "rr_x": 15.0,
           "rr_y": 3.0,
           "mm": 1.83,
-          "t_smin": 11,
+          "t_smin": 10.1,
           "sigma_cdmin": 18.95,
-          "nachw_gleit": 0.132
+          "nachw_gleit": 0.07
         }
       }
     },
@@ -2591,15 +2591,15 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 36,
-          "tt_q": 46,
-          "tt_b": 56,
+          "tt_q": 41.0,
+          "tt_b": 50.8,
           "aa": 60000,
           "aa_str": 56064,
           "aa_r": 54220.0,
           "ss_1": 4.83,
-          "t_s": 5,
+          "t_s": 4.9,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -2612,17 +2612,17 @@
         },
         "nachw_params": {
           "epsi_cd": 12.728,
-          "epsi_qd": 0.117,
+          "epsi_qd": 0.131,
           "epsi_ad": 0.509,
-          "epsi_td": 13.354,
-          "verdreh_nachw": 0.127,
+          "epsi_td": 13.368,
+          "verdreh_nachw": 0.13,
           "stab_nachw": 2.387,
           "rr_x": 7.5,
           "rr_y": 3.0,
           "mm": 1.02,
-          "t_smin": 5,
+          "t_smin": 4.9,
           "sigma_cdmin": 9.22,
-          "nachw_gleit": 0.122
+          "nachw_gleit": 0.064
         }
       }
     },
@@ -2649,15 +2649,15 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 20,
-          "tt_q": 30,
-          "tt_b": 39,
+          "tt_q": 25.0,
+          "tt_b": 33.4,
           "aa": 60000,
           "aa_str": 56064,
           "aa_r": 52760.0,
           "ss_1": 5.79,
-          "t_s": 9,
+          "t_s": 8.4,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -2670,17 +2670,17 @@
         },
         "nachw_params": {
           "epsi_cd": 21.824,
-          "epsi_qd": 0.34,
+          "epsi_qd": 0.408,
           "epsi_ad": 1.561,
-          "epsi_td": 23.725,
-          "verdreh_nachw": 0.224,
+          "epsi_td": 23.793,
+          "verdreh_nachw": 0.237,
           "stab_nachw": 2.273,
           "rr_x": 27.0,
           "rr_y": 5.4,
           "mm": 4.75,
-          "t_smin": 9,
+          "t_smin": 8.4,
           "sigma_cdmin": 18.95,
-          "nachw_gleit": 0.238
+          "nachw_gleit": 0.126
         }
       }
     },
@@ -2707,15 +2707,15 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 20,
-          "tt_q": 30,
-          "tt_b": 35,
+          "tt_q": 25.0,
+          "tt_b": 29.1,
           "aa": 60000,
           "aa_str": 56064,
           "aa_r": 54220.0,
           "ss_1": 5.79,
-          "t_s": 5,
+          "t_s": 4.1,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -2728,17 +2728,17 @@
         },
         "nachw_params": {
           "epsi_cd": 10.618,
-          "epsi_qd": 0.18,
+          "epsi_qd": 0.215,
           "epsi_ad": 1.1,
-          "epsi_td": 11.898,
-          "verdreh_nachw": 0.307,
+          "epsi_td": 11.933,
+          "verdreh_nachw": 0.325,
           "stab_nachw": 1.106,
           "rr_x": 13.5,
           "rr_y": 5.4,
           "mm": 2.65,
-          "t_smin": 5,
+          "t_smin": 4.1,
           "sigma_cdmin": 9.22,
-          "nachw_gleit": 0.219
+          "nachw_gleit": 0.115
         }
       }
     },
@@ -2791,7 +2791,7 @@
           "rr_x": 49.09,
           "rr_y": 9.82,
           "mm": 157.75,
-          "t_smin": 3
+          "t_smin": 2.9
         }
       }
     },
@@ -2844,7 +2844,7 @@
           "rr_x": 24.54,
           "rr_y": 9.82,
           "mm": 88.1,
-          "t_smin": 2
+          "t_smin": 1.4
         }
       }
     },
@@ -2897,7 +2897,7 @@
           "rr_x": 88.36,
           "rr_y": 17.67,
           "mm": 408.88,
-          "t_smin": 3
+          "t_smin": 2.4
         }
       }
     },
@@ -2950,7 +2950,7 @@
           "rr_x": 44.18,
           "rr_y": 17.67,
           "mm": 228.36,
-          "t_smin": 2
+          "t_smin": 1.2
         }
       }
     },
@@ -2976,10 +2976,10 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 36,
-          "tt_q": 46,
-          "tt_b": 54,
+          "tt_q": 41.0,
+          "tt_b": 49.0,
           "aa": 196349.54084936206,
           "aa_str": 190116.62102463993,
           "aa_r": 186082.32062639677,
@@ -2995,17 +2995,17 @@
         },
         "nachw_params": {
           "epsi_cd": 4.942,
-          "epsi_qd": 0.222,
+          "epsi_qd": 0.249,
           "epsi_ad": 2.925,
-          "epsi_td": 8.089,
-          "verdreh_nachw": 1.03,
+          "epsi_td": 8.116,
+          "verdreh_nachw": 1.058,
           "stab_nachw": 0.362,
           "rr_x": 49.09,
           "rr_y": 9.82,
           "mm": 157.75,
-          "t_smin": 3,
+          "t_smin": 2.9,
           "sigma_cdmin": 5.37,
-          "nachw_gleit": 0.321
+          "nachw_gleit": 0.17
         }
       }
     },
@@ -3031,10 +3031,10 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 36,
-          "tt_q": 46,
-          "tt_b": 54,
+          "tt_q": 41.0,
+          "tt_b": 49.0,
           "aa": 196349.54084936206,
           "aa_str": 190116.62102463993,
           "aa_r": 187863.44852137732,
@@ -3050,17 +3050,17 @@
         },
         "nachw_params": {
           "epsi_cd": 2.447,
-          "epsi_qd": 0.117,
+          "epsi_qd": 0.131,
           "epsi_ad": 1.634,
-          "epsi_td": 4.198,
-          "verdreh_nachw": 1.274,
+          "epsi_td": 4.212,
+          "verdreh_nachw": 1.308,
           "stab_nachw": 0.179,
           "rr_x": 24.54,
           "rr_y": 9.82,
           "mm": 88.1,
-          "t_smin": 2,
+          "t_smin": 1.4,
           "sigma_cdmin": 2.66,
-          "nachw_gleit": 0.248
+          "nachw_gleit": 0.13
         }
       }
     },
@@ -3086,10 +3086,10 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 20,
-          "tt_q": 30,
-          "tt_b": 34,
+          "tt_q": 25.0,
+          "tt_b": 29.0,
           "aa": 196349.54084936206,
           "aa_str": 190116.62102463993,
           "aa_r": 186082.32062639677,
@@ -3105,17 +3105,17 @@
         },
         "nachw_params": {
           "epsi_cd": 4.118,
-          "epsi_qd": 0.34,
+          "epsi_qd": 0.408,
           "epsi_ad": 6.318,
-          "epsi_td": 10.776,
-          "verdreh_nachw": 2.426,
+          "epsi_td": 10.844,
+          "verdreh_nachw": 2.584,
           "stab_nachw": 0.167,
           "rr_x": 88.36,
           "rr_y": 17.67,
           "mm": 408.88,
-          "t_smin": 3,
+          "t_smin": 2.4,
           "sigma_cdmin": 5.37,
-          "nachw_gleit": 0.578
+          "nachw_gleit": 0.305
         }
       }
     },
@@ -3141,10 +3141,10 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 20,
-          "tt_q": 30,
-          "tt_b": 34,
+          "tt_q": 25.0,
+          "tt_b": 29.0,
           "aa": 196349.54084936206,
           "aa_str": 190116.62102463993,
           "aa_r": 187863.44852137732,
@@ -3160,17 +3160,17 @@
         },
         "nachw_params": {
           "epsi_cd": 2.039,
-          "epsi_qd": 0.18,
+          "epsi_qd": 0.215,
           "epsi_ad": 3.529,
-          "epsi_td": 5.748,
-          "verdreh_nachw": 3.0,
+          "epsi_td": 5.783,
+          "verdreh_nachw": 3.195,
           "stab_nachw": 0.083,
           "rr_x": 44.18,
           "rr_y": 17.67,
           "mm": 228.36,
-          "t_smin": 2,
+          "t_smin": 1.2,
           "sigma_cdmin": 2.66,
-          "nachw_gleit": 0.447
+          "nachw_gleit": 0.235
         }
       }
     },
@@ -3223,7 +3223,7 @@
           "rr_x": 49.09,
           "rr_y": 9.82,
           "mm": 157.75,
-          "t_smin": 3
+          "t_smin": 2.9
         }
       }
     },
@@ -3276,7 +3276,7 @@
           "rr_x": 24.54,
           "rr_y": 9.82,
           "mm": 88.1,
-          "t_smin": 2
+          "t_smin": 1.4
         }
       }
     },
@@ -3329,7 +3329,7 @@
           "rr_x": 88.36,
           "rr_y": 17.67,
           "mm": 408.88,
-          "t_smin": 3
+          "t_smin": 2.4
         }
       }
     },
@@ -3382,7 +3382,7 @@
           "rr_x": 44.18,
           "rr_y": 17.67,
           "mm": 228.36,
-          "t_smin": 2
+          "t_smin": 1.2
         }
       }
     },
@@ -3408,10 +3408,10 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 36,
-          "tt_q": 46,
-          "tt_b": 54,
+          "tt_q": 41.0,
+          "tt_b": 49.0,
           "aa": 196349.54084936206,
           "aa_str": 190116.62102463993,
           "aa_r": 186082.32062639677,
@@ -3427,17 +3427,17 @@
         },
         "nachw_params": {
           "epsi_cd": 4.942,
-          "epsi_qd": 0.222,
+          "epsi_qd": 0.249,
           "epsi_ad": 2.925,
-          "epsi_td": 8.089,
-          "verdreh_nachw": 1.03,
+          "epsi_td": 8.116,
+          "verdreh_nachw": 1.058,
           "stab_nachw": 0.362,
           "rr_x": 49.09,
           "rr_y": 9.82,
           "mm": 157.75,
-          "t_smin": 3,
+          "t_smin": 2.9,
           "sigma_cdmin": 5.37,
-          "nachw_gleit": 0.321
+          "nachw_gleit": 0.17
         }
       }
     },
@@ -3463,10 +3463,10 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 36,
-          "tt_q": 46,
-          "tt_b": 54,
+          "tt_q": 41.0,
+          "tt_b": 49.0,
           "aa": 196349.54084936206,
           "aa_str": 190116.62102463993,
           "aa_r": 187863.44852137732,
@@ -3482,17 +3482,17 @@
         },
         "nachw_params": {
           "epsi_cd": 2.447,
-          "epsi_qd": 0.117,
+          "epsi_qd": 0.131,
           "epsi_ad": 1.634,
-          "epsi_td": 4.198,
-          "verdreh_nachw": 1.274,
+          "epsi_td": 4.212,
+          "verdreh_nachw": 1.308,
           "stab_nachw": 0.179,
           "rr_x": 24.54,
           "rr_y": 9.82,
           "mm": 88.1,
-          "t_smin": 2,
+          "t_smin": 1.4,
           "sigma_cdmin": 2.66,
-          "nachw_gleit": 0.248
+          "nachw_gleit": 0.13
         }
       }
     },
@@ -3518,10 +3518,10 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 20,
-          "tt_q": 30,
-          "tt_b": 34,
+          "tt_q": 25.0,
+          "tt_b": 29.0,
           "aa": 196349.54084936206,
           "aa_str": 190116.62102463993,
           "aa_r": 186082.32062639677,
@@ -3537,17 +3537,17 @@
         },
         "nachw_params": {
           "epsi_cd": 4.118,
-          "epsi_qd": 0.34,
+          "epsi_qd": 0.408,
           "epsi_ad": 6.318,
-          "epsi_td": 10.776,
-          "verdreh_nachw": 2.426,
+          "epsi_td": 10.844,
+          "verdreh_nachw": 2.584,
           "stab_nachw": 0.167,
           "rr_x": 88.36,
           "rr_y": 17.67,
           "mm": 408.88,
-          "t_smin": 3,
+          "t_smin": 2.4,
           "sigma_cdmin": 5.37,
-          "nachw_gleit": 0.578
+          "nachw_gleit": 0.305
         }
       }
     },
@@ -3573,10 +3573,10 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 20,
-          "tt_q": 30,
-          "tt_b": 34,
+          "tt_q": 25.0,
+          "tt_b": 29.0,
           "aa": 196349.54084936206,
           "aa_str": 190116.62102463993,
           "aa_r": 187863.44852137732,
@@ -3592,17 +3592,17 @@
         },
         "nachw_params": {
           "epsi_cd": 2.039,
-          "epsi_qd": 0.18,
+          "epsi_qd": 0.215,
           "epsi_ad": 3.529,
-          "epsi_td": 5.748,
-          "verdreh_nachw": 3.0,
+          "epsi_td": 5.783,
+          "verdreh_nachw": 3.195,
           "stab_nachw": 0.083,
           "rr_x": 44.18,
           "rr_y": 17.67,
           "mm": 228.36,
-          "t_smin": 2,
+          "t_smin": 1.2,
           "sigma_cdmin": 2.66,
-          "nachw_gleit": 0.447
+          "nachw_gleit": 0.235
         }
       }
     },
@@ -3636,7 +3636,7 @@
           "aa_str": 91863.31078361913,
           "aa_r": 89058.9800189867,
           "ss_1": 5.04,
-          "t_s": 6,
+          "t_s": 6.0,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -3655,7 +3655,7 @@
           "rr_x": 24.05,
           "rr_y": 4.81,
           "mm": 17.8,
-          "t_smin": 6
+          "t_smin": 6.0
         }
       }
     },
@@ -3708,7 +3708,7 @@
           "rr_x": 12.03,
           "rr_y": 4.81,
           "mm": 9.94,
-          "t_smin": 3
+          "t_smin": 2.9
         }
       }
     },
@@ -3742,7 +3742,7 @@
           "aa_str": 91863.31078361913,
           "aa_r": 89058.9800189867,
           "ss_1": 6.05,
-          "t_s": 5,
+          "t_s": 5.0,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -3761,7 +3761,7 @@
           "rr_x": 43.3,
           "rr_y": 8.66,
           "mm": 46.13,
-          "t_smin": 5
+          "t_smin": 5.0
         }
       }
     },
@@ -3814,7 +3814,7 @@
           "rr_x": 21.65,
           "rr_y": 8.66,
           "mm": 25.76,
-          "t_smin": 3
+          "t_smin": 2.5
         }
       }
     },
@@ -3840,15 +3840,15 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 36,
-          "tt_q": 46,
-          "tt_b": 58,
+          "tt_q": 41.0,
+          "tt_b": 53.0,
           "aa": 96211.27501618741,
           "aa_str": 91863.31078361913,
           "aa_r": 89058.9800189867,
           "ss_1": 5.04,
-          "t_s": 6,
+          "t_s": 6.0,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -3859,17 +3859,17 @@
         },
         "nachw_params": {
           "epsi_cd": 14.853,
-          "epsi_qd": 0.222,
+          "epsi_qd": 0.249,
           "epsi_ad": 1.413,
-          "epsi_td": 16.488,
-          "verdreh_nachw": 0.178,
+          "epsi_td": 16.515,
+          "verdreh_nachw": 0.182,
           "stab_nachw": 1.563,
           "rr_x": 24.05,
           "rr_y": 4.81,
           "mm": 17.8,
-          "t_smin": 6,
+          "t_smin": 6.0,
           "sigma_cdmin": 11.23,
-          "nachw_gleit": 0.194
+          "nachw_gleit": 0.102
         }
       }
     },
@@ -3895,10 +3895,10 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 36,
-          "tt_q": 46,
-          "tt_b": 54,
+          "tt_q": 41.0,
+          "tt_b": 49.0,
           "aa": 96211.27501618741,
           "aa_str": 91863.31078361913,
           "aa_r": 90297.08111671708,
@@ -3914,17 +3914,17 @@
         },
         "nachw_params": {
           "epsi_cd": 7.324,
-          "epsi_qd": 0.117,
+          "epsi_qd": 0.131,
           "epsi_ad": 0.789,
-          "epsi_td": 8.23,
-          "verdreh_nachw": 0.22,
+          "epsi_td": 8.244,
+          "verdreh_nachw": 0.225,
           "stab_nachw": 0.771,
           "rr_x": 12.03,
           "rr_y": 4.81,
           "mm": 9.94,
-          "t_smin": 3,
+          "t_smin": 2.9,
           "sigma_cdmin": 5.54,
-          "nachw_gleit": 0.168
+          "nachw_gleit": 0.088
         }
       }
     },
@@ -3950,15 +3950,15 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 20,
-          "tt_q": 30,
-          "tt_b": 35,
+          "tt_q": 25.0,
+          "tt_b": 30.0,
           "aa": 96211.27501618741,
           "aa_str": 91863.31078361913,
           "aa_r": 89058.9800189867,
           "ss_1": 6.05,
-          "t_s": 5,
+          "t_s": 5.0,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -3969,17 +3969,17 @@
         },
         "nachw_params": {
           "epsi_cd": 12.373,
-          "epsi_qd": 0.34,
+          "epsi_qd": 0.408,
           "epsi_ad": 3.053,
-          "epsi_td": 15.766,
-          "verdreh_nachw": 0.432,
+          "epsi_td": 15.834,
+          "verdreh_nachw": 0.457,
           "stab_nachw": 0.724,
           "rr_x": 43.3,
           "rr_y": 8.66,
           "mm": 46.13,
-          "t_smin": 5,
+          "t_smin": 5.0,
           "sigma_cdmin": 11.23,
-          "nachw_gleit": 0.348
+          "nachw_gleit": 0.184
         }
       }
     },
@@ -4005,10 +4005,10 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 20,
-          "tt_q": 30,
-          "tt_b": 34,
+          "tt_q": 25.0,
+          "tt_b": 29.0,
           "aa": 96211.27501618741,
           "aa_str": 91863.31078361913,
           "aa_r": 90297.08111671708,
@@ -4024,17 +4024,17 @@
         },
         "nachw_params": {
           "epsi_cd": 6.102,
-          "epsi_qd": 0.18,
+          "epsi_qd": 0.215,
           "epsi_ad": 1.705,
-          "epsi_td": 7.987,
-          "verdreh_nachw": 0.534,
+          "epsi_td": 8.022,
+          "verdreh_nachw": 0.565,
           "stab_nachw": 0.357,
           "rr_x": 21.65,
           "rr_y": 8.66,
           "mm": 25.76,
-          "t_smin": 3,
+          "t_smin": 2.5,
           "sigma_cdmin": 5.54,
-          "nachw_gleit": 0.303
+          "nachw_gleit": 0.159
         }
       }
     },
@@ -4068,7 +4068,7 @@
           "aa_str": 91863.31078361913,
           "aa_r": 89058.9800189867,
           "ss_1": 5.04,
-          "t_s": 6,
+          "t_s": 6.0,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -4087,7 +4087,7 @@
           "rr_x": 24.05,
           "rr_y": 4.81,
           "mm": 17.8,
-          "t_smin": 6
+          "t_smin": 6.0
         }
       }
     },
@@ -4140,7 +4140,7 @@
           "rr_x": 12.03,
           "rr_y": 4.81,
           "mm": 9.94,
-          "t_smin": 3
+          "t_smin": 2.9
         }
       }
     },
@@ -4174,7 +4174,7 @@
           "aa_str": 91863.31078361913,
           "aa_r": 89058.9800189867,
           "ss_1": 6.05,
-          "t_s": 5,
+          "t_s": 5.0,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -4193,7 +4193,7 @@
           "rr_x": 43.3,
           "rr_y": 8.66,
           "mm": 46.13,
-          "t_smin": 5
+          "t_smin": 5.0
         }
       }
     },
@@ -4246,7 +4246,7 @@
           "rr_x": 21.65,
           "rr_y": 8.66,
           "mm": 25.76,
-          "t_smin": 3
+          "t_smin": 2.5
         }
       }
     },
@@ -4272,15 +4272,15 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 36,
-          "tt_q": 46,
-          "tt_b": 58,
+          "tt_q": 41.0,
+          "tt_b": 53.0,
           "aa": 96211.27501618741,
           "aa_str": 91863.31078361913,
           "aa_r": 89058.9800189867,
           "ss_1": 5.04,
-          "t_s": 6,
+          "t_s": 6.0,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -4291,17 +4291,17 @@
         },
         "nachw_params": {
           "epsi_cd": 14.853,
-          "epsi_qd": 0.222,
+          "epsi_qd": 0.249,
           "epsi_ad": 1.413,
-          "epsi_td": 16.488,
-          "verdreh_nachw": 0.178,
+          "epsi_td": 16.515,
+          "verdreh_nachw": 0.182,
           "stab_nachw": 1.563,
           "rr_x": 24.05,
           "rr_y": 4.81,
           "mm": 17.8,
-          "t_smin": 6,
+          "t_smin": 6.0,
           "sigma_cdmin": 11.23,
-          "nachw_gleit": 0.194
+          "nachw_gleit": 0.102
         }
       }
     },
@@ -4327,10 +4327,10 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 36,
-          "tt_q": 46,
-          "tt_b": 54,
+          "tt_q": 41.0,
+          "tt_b": 49.0,
           "aa": 96211.27501618741,
           "aa_str": 91863.31078361913,
           "aa_r": 90297.08111671708,
@@ -4346,17 +4346,17 @@
         },
         "nachw_params": {
           "epsi_cd": 7.324,
-          "epsi_qd": 0.117,
+          "epsi_qd": 0.131,
           "epsi_ad": 0.789,
-          "epsi_td": 8.23,
-          "verdreh_nachw": 0.22,
+          "epsi_td": 8.244,
+          "verdreh_nachw": 0.225,
           "stab_nachw": 0.771,
           "rr_x": 12.03,
           "rr_y": 4.81,
           "mm": 9.94,
-          "t_smin": 3,
+          "t_smin": 2.9,
           "sigma_cdmin": 5.54,
-          "nachw_gleit": 0.168
+          "nachw_gleit": 0.088
         }
       }
     },
@@ -4382,15 +4382,15 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 20,
-          "tt_q": 30,
-          "tt_b": 35,
+          "tt_q": 25.0,
+          "tt_b": 30.0,
           "aa": 96211.27501618741,
           "aa_str": 91863.31078361913,
           "aa_r": 89058.9800189867,
           "ss_1": 6.05,
-          "t_s": 5,
+          "t_s": 5.0,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -4401,17 +4401,17 @@
         },
         "nachw_params": {
           "epsi_cd": 12.373,
-          "epsi_qd": 0.34,
+          "epsi_qd": 0.408,
           "epsi_ad": 3.053,
-          "epsi_td": 15.766,
-          "verdreh_nachw": 0.432,
+          "epsi_td": 15.834,
+          "verdreh_nachw": 0.457,
           "stab_nachw": 0.724,
           "rr_x": 43.3,
           "rr_y": 8.66,
           "mm": 46.13,
-          "t_smin": 5,
+          "t_smin": 5.0,
           "sigma_cdmin": 11.23,
-          "nachw_gleit": 0.348
+          "nachw_gleit": 0.184
         }
       }
     },
@@ -4437,10 +4437,10 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 20,
-          "tt_q": 30,
-          "tt_b": 34,
+          "tt_q": 25.0,
+          "tt_b": 29.0,
           "aa": 96211.27501618741,
           "aa_str": 91863.31078361913,
           "aa_r": 90297.08111671708,
@@ -4456,17 +4456,17 @@
         },
         "nachw_params": {
           "epsi_cd": 6.102,
-          "epsi_qd": 0.18,
+          "epsi_qd": 0.215,
           "epsi_ad": 1.705,
-          "epsi_td": 7.987,
-          "verdreh_nachw": 0.534,
+          "epsi_td": 8.022,
+          "verdreh_nachw": 0.565,
           "stab_nachw": 0.357,
           "rr_x": 21.65,
           "rr_y": 8.66,
           "mm": 25.76,
-          "t_smin": 3,
+          "t_smin": 2.5,
           "sigma_cdmin": 5.54,
-          "nachw_gleit": 0.303
+          "nachw_gleit": 0.159
         }
       }
     },
@@ -4522,7 +4522,7 @@
           "rr_x": 4.5,
           "rr_y": 4.5,
           "mm": 1.84,
-          "t_smin": 2
+          "t_smin": 1.2
         }
       }
     },
@@ -4549,15 +4549,15 @@
       },
       "expected_outputs": {
         "lag_params": {
-          "t_2": 5,
+          "t_2": 2.5,
           "tt_e": 100,
-          "tt_q": 110,
-          "tt_b": 138,
+          "tt_q": 105.0,
+          "tt_b": 130.6,
           "aa": 300000,
           "aa_str": 291264,
           "aa_r": 278440.0,
           "ss_1": 6.72,
-          "t_s": 7,
+          "t_s": 6.4,
           "gg": 0.9,
           "ee_b": 2000,
           "f_y": 235,
@@ -4570,17 +4570,17 @@
         },
         "nachw_params": {
           "epsi_cd": 7.126,
-          "epsi_qd": 0.183,
+          "epsi_qd": 0.191,
           "epsi_ad": 1.473,
-          "epsi_td": 8.782,
-          "verdreh_nachw": 0.595,
+          "epsi_td": 8.79,
+          "verdreh_nachw": 0.598,
           "stab_nachw": 1.448,
           "rr_x": 54.0,
           "rr_y": 5.4,
           "mm": 96.59,
-          "t_smin": 7,
+          "t_smin": 6.4,
           "sigma_cdmin": 7.18,
-          "nachw_gleit": 0.191
+          "nachw_gleit": 0.097
         }
       }
     }
