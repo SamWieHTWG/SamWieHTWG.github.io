@@ -1,0 +1,1 @@
+import{i as a}from"./BuFjotJ2.js";a();
