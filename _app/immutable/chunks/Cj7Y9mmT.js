@@ -1,1 +1,0 @@
-import{B as a}from"./CFSqIZJi.js";a();
