@@ -1,1 +1,0 @@
-import{a1 as o}from"./DSP0Vb11.js";function r(){const l={calculationResult:null},{subscribe:s,set:a,update:u}=o(l),e={subscribe:s,set:t=>{a(t)},update:t=>{u(t)},reset:()=>{a(l)},setCalculationResult:t=>{e.update(n=>({...n,calculationResult:t}))},clearCalculationResult:()=>{e.update(t=>({...t,calculationResult:null}))}};return e}const i=r();export{i as m};
