@@ -1,0 +1,1 @@
+import{ad as a}from"./Cl0ug4r9.js";a();
