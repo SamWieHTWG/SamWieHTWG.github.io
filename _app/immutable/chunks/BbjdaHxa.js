@@ -1,1 +1,0 @@
-import{i as c,e as i,s as _,b as h,p as d,a as k,U as u,h as r,f as y,c as b}from"./Dfjz-k6v.js";function p(f,n,t){r&&y();var e=f,s=u,a,o=c()?i:_;h(()=>{o(s,s=n())&&(a&&d(a),a=k(()=>t(e)))}),r&&(e=b)}export{p as k};

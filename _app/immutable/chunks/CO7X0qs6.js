@@ -1,0 +1,1 @@
+import{i as c,j as i,s as _,b as h,p as k,a as d,U as u,h as r,k as y,c as b}from"./BWTM1ot2.js";function p(f,n,t){r&&y();var e=f,s=u,a,o=c()?i:_;h(()=>{o(s,s=n())&&(a&&k(a),a=d(()=>t(e)))}),r&&(e=b)}export{p as k};
